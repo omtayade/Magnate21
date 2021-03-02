@@ -5,7 +5,7 @@ import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.com
 import Header from './components/headers/headers.component'
 import {auth , createUserProfile} from './firebase/firebase.utils'
 import './App.css';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch ,Redirect} from 'react-router-dom';
 import {connect} from 'react-redux'
 import {setCurrentUser} from './redux/user/user.actions'
 
@@ -52,15 +52,23 @@ componentWillUnmount(){
         <Switch>
           <Route exact path='/' component={HomePage}/>
           <Route exact path='/shop' component={ShopPage} />
-          <Route exact path='/signin' component={SignInAndSignUp} />
+          <Route exact path='/signin' render={()=>
+              this.props.currentUser ? (<Redirect to='/' />) :
+              (<SignInAndSignUp/>) 
+                
+                } />
         </Switch>
       </div>
    );
   }
 }
 
+const mapStateToProps = ({user}) =>({
+  currentUser:user.currentUser
+})
+
 const mapDispatchToProps = dispatch =>({
   setCurrentUser: user => dispatch(setCurrentUser(user)) //the rightmost setcurrentuser is the one which is imported from redux user actions.
 });
 
-export default connect(null , mapDispatchToProps) (App);
+export default connect(mapStateToProps , mapDispatchToProps) (App);
