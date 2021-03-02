@@ -2,51 +2,48 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
-const config={
-    apiKey: "AIzaSyCxEx9YTOnVTZL7F1508X3hkETMZor4y98",
-    authDomain: "apna-dukaan-db.firebaseapp.com",
-    projectId: "apna-dukaan-db",
-    storageBucket: "apna-dukaan-db.appspot.com",
-    messagingSenderId: "973250682967",
-    appId: "1:973250682967:web:974b15412cd1eecb4dc312",
-    measurementId: "G-FV8JYZS2KQ"
-  };
+const config = {
+  apiKey: "AIzaSyCxEx9YTOnVTZL7F1508X3hkETMZor4y98",
+  authDomain: "apna-dukaan-db.firebaseapp.com",
+  projectId: "apna-dukaan-db",
+  storageBucket: "apna-dukaan-db.appspot.com",
+  messagingSenderId: "973250682967",
+  appId: "1:973250682967:web:974b15412cd1eecb4dc312",
+  measurementId: "G-FV8JYZS2KQ"
+};
 
-  export const createUserProfile = async(userAuth , additionalData) =>{
-    if (!userAuth) return;
- 
-    // console.log("hELLO ");
-    const userRef = firestore.doc(`users/${userAuth.uid}`);
-    const snapShot = await userRef.get();
-    console.log(snapShot);
+firebase.initializeApp(config);
 
-    if(! snapShot.exists){
-      const{displayName , email} = userAuth;
-      const createdAt = new Date();
-      try{
-        await userRef.set({
-          displayName,
-          email,
-          createdAt,
-          ...additionalData
+export const createUserProfile = async (userAuth, additionalData) => {
+  if (!userAuth) return;
 
-        })
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
 
+  const snapShot = await userRef.get();
 
-      }
-      catch(error){
-        console.log('problem creating user', error.message)
-      }
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      });
+    } catch (error) {
+      console.log('error creating user', error.message);
     }
-   return userRef;
-  };
+  }
 
-  firebase.initializeApp(config);
+  return userRef;
+};
 
-  export const auth= firebase.auth();
-  export const firestore=firebase.firestore();
-  const provider = new firebase.auth.GoogleAuthProvider();
-  provider.setCustomParameters({prompt: 'select_account'});
-  export const signInWithGoogle =()=> auth.signInWithPopup(provider);
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
 
-  export default firebase;
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: 'select_account' });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+export default firebase;

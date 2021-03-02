@@ -26,7 +26,7 @@ class SignUp extends React.Component{
 
         try{
            const {user} = await auth.createUserWithEmailAndPassword(email ,password); 
-            await createUserProfile(user , {displayName});
+             await createUserProfile(user , {displayName});
             
             this.setState({
             displayName:'',
@@ -52,7 +52,7 @@ class SignUp extends React.Component{
         return(
             <div className='signup'>
                 <h2  className='title'>I don't have an account</h2>
-                <span>Sign up with your email amd passworqd</span>
+                <span>Sign up with your email amd password</span>
                 <form className='sign-up-form' onSubmit={this.handleSubmit} >
                     <FormInput type="text" name="displayName" label="Username" value={displayName} handleChange={this.handleChange} required /> 
                     <FormInput type="email" name="email" label="Email" value={email} handleChange={this.handleChange} required /> 
