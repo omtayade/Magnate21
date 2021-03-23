@@ -3,7 +3,7 @@ import './sign-in-and-sign-up.styles.scss'
 import SignIn from '../../components/sign-in/sign-in.component'
 import SignUp from "../../components/Sign-up/sign-up.component";
 // import {connect} from 'react-redux'
-const SignInAndSignUp = ({currentUser}) =>(
+const SignInAndSignUp = () =>(
     <div className="sign-in-and-sign-up">
         {/* {currentUser ?
             (<div>
