@@ -25,7 +25,7 @@ class App extends React.Component {
     this.unsubscribeFromAuth= auth.onAuthStateChanged(async userAuth => {
     if(userAuth){
 
-     const userRef = await  createUserProfile(userAuth);
+     const userRef = await  createUserProfile(userAuth);  //App.js me createuserProfile user ko database me dalne ka kaam nahi kar raha hai vo to signup compo me hi ho jaata hai  ,yaha pe ye bas database me already stored user ka userRef bhej raha hai taki ham apne state me daal sake,  
 
       userRef.onSnapshot(snapShot =>{
         setCurrentUser({

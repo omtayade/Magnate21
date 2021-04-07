@@ -7,7 +7,11 @@ import {createStructuredSelector} from 'reselect'
 import './cart-dropdown.styles.scss'
 import CustomButton from '../custom-button/custom-button.component'
 import CartItem from '../Cart-item/cart-item.component'
+
+
+
 const CartDropdown =({cartItems , history ,dispatch})=>(
+    
     <div className='cart-dropdown'>
         <div className='cart-items' >
             {   cartItems.length ?

@@ -25,8 +25,8 @@ class SignUp extends React.Component{
         }
 
         try{
-           const {user} = await auth.createUserWithEmailAndPassword(email ,password); 
-             await createUserProfile(user , {displayName});
+           const {user} = await auth.createUserWithEmailAndPassword(email ,password); //authentication area me ban gaya user with emaila nd password.
+             await createUserProfile(user , {displayName}); //authentication area se user ko liya and database me dala with email pass and displayName with the help of createUserProfile util function.
             
             this.setState({
             displayName:'',
