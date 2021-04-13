@@ -1,4 +1,6 @@
 .menu-item {
+  position: relative;
+  text-align: center;
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
@@ -10,7 +12,7 @@
   overflow: hidden;
 
   &:hover {
-    cursor: pointer;
+    // cursor: pointer;
 
     & .background-image {
       transform: scale(1.1);
@@ -42,6 +44,8 @@
   }
 
   .content {
+    top: 39%;
+    left:28%;
     height: 90px;
     padding: 0 25px;
     display: flex;
@@ -53,6 +57,10 @@
     opacity: 0.7;
     position: absolute;
     width:15vw;
+
+    &:hover {
+      cursor: pointer;
+    }
 
     .title {
       font-weight: bold;
@@ -67,10 +75,10 @@
     }
   }
 }
-@media only screen and(max-width:480px){
+// @media only screen and(max-width:480px){
   
-  .title{
-    font-size: 15px;
-  }
+//   .title{
+//     font-size: 15px;
+//   }
 
-}
+// }
