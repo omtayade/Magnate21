@@ -22,11 +22,24 @@
         }
       }
     }
+  button{
+    margin-bottom: 35px;
+    margin-left: auto;
+  }
+
   
     .total {
       margin-top: 30px;
       margin-left: auto;
       font-size: 36px;
+    }
+
+
+    .test-warning{
+      text-align: center;
+      margin-top: 40px;
+      font-size: 24px;
+      color: red;
     }
   }
   
