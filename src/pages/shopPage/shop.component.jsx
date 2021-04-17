@@ -5,7 +5,7 @@ import CollectionsOverview from '../../components/collections-overview/collectio
 import CollectionPage from '../collection/collection.component';
 
 const ShopPage = ({ match }) => {
-  console.log(match.path)
+  // console.log(match.path)
   return(
   <div className='shop-page'>
   
