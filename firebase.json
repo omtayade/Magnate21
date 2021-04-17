@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "build/apna-dukaan-db",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
