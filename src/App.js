@@ -1,7 +1,4 @@
 import React from 'react';
-import HomePage from './pages/homepage/homepage.component';
-import ShopPage from './pages/shopPage/shop.component'
-import CheckoutPage from './pages/Checkout/checkout.component'
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
 import Header from './components/headers/headers.component'
 import {auth , createUserProfile} from './firebase/firebase.utils'
@@ -11,7 +8,7 @@ import {connect} from 'react-redux'
 import {setCurrentUser} from './redux/user/user.actions'
 import {selectCurrentUser} from './redux/user/user.selectors'
 import {createStructuredSelector} from 'reselect'
-
+import AboutUs from './pages/About us/about-us.component'
 
 
 class App extends React.Component {
@@ -53,9 +50,9 @@ componentWillUnmount(){
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path='/' component={HomePage}/>
-          <Route  path='/shop' component={ShopPage} />
-          <Route exact path='/checkout' component={CheckoutPage} />
+          
+          
+         <Route exact path='/about-us' component={AboutUs} />
           
           <Route exact path='/signin' render={()=>
               this.props.currentUser ? (<Redirect to='/' />) :
