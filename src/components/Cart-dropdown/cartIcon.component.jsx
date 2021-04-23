@@ -1,5 +1,5 @@
 import React from 'react'
-import {ReactComponent as ShoppingIcon} from '../../assets/shoppingBag.svg'
+// import {ReactComponent as ShoppingIcon} from '../../assets/shoppingBag.svg'
 import './cartIcon.styles.scss'
 import {selectCartItemsCount} from '../../redux/cart/cart.selectors'
 import {createStructuredSelector} from 'reselect'
