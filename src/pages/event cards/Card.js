@@ -1,15 +1,14 @@
-import React, {Children, useState} from 'react'
+import React, { useState} from 'react'
 import 'react-responsive-modal/styles.css';
-import '../Styles/Card.css'
+import './Card.css'
 import { Modal } from 'react-responsive-modal';
 
-function Card({title , children}) {
+function Card({title , children, modalData}) {
 
 
     const [open, setOpen] = useState(false);
 
-    const onOpenModal = () => setOpen(true);
-    const onCloseModal = () => setOpen(false);
+    const [isRegister, setisRegister] = useState(false)
 
 
 
@@ -26,28 +25,26 @@ function Card({title , children}) {
 
             <div className="card__footer">
                 <div className="card__btn__holder">
-                    <div className="card__btn">
-                        Register
+                    <div className="card__btn" onClick={()=>setisRegister(!isRegister)}>
+                        {isRegister ? "Registered" : "Register"}
                     </div>
                 </div>
 
                 <div className="card__btn__holder">
-                    <div className="card__btn" onClick={onOpenModal}>
+                    <div className="card__btn" onClick={() => setOpen(true)}>
                         Details
                     </div>
                 </div>
             </div>
 
             <div>
-                <Modal open={open} onClose={onCloseModal} classNames={{
+                <Modal open={open} onClose={() => setOpen(false)} classNames={{
                                                                         overlay: "customOverlay",
                                                                         modal: "customModal",
                                                                         }} center>
-                    <h2>Simple centered modal</h2>
+                    <h2>Details</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                        pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                        hendrerit risus, sed porttitor quam.
+                        {modalData}
                     </p>
                 </Modal>
             </div>

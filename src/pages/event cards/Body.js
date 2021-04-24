@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './Card'
-import '../Styles/Body.css'
+import './Body.css'
 
 function Body() {
 
@@ -14,36 +14,36 @@ function Body() {
                 </div>
                 <div className="app__body__cards">
                     <div className="a">
-                    <Card title={<h3>Event</h3>}>
+                    <Card title={<h3>Event</h3>} modalData={data} >
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>} >
+                    <Card title={<h3>Event</h3>} modalData={data} >
                         {data}
                     </Card>
                     </div>
                     <div  className="b">
-                    <Card title={<h3>Event</h3>}>
+                    <Card title={<h3>Event</h3>} modalData={data}>
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>}>
+                    <Card title={<h3>Event</h3>} modalData={data}>
                         {data}
                     </Card>
                     </div>
                 </div>
                 <div className="app__body__cards">
                     <div className="a">
-                    <Card title={<h3>Event</h3>}>
+                    <Card title={<h3>Event</h3>} modalData={data}>
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>}>
+                    <Card title={<h3>Event</h3>} modalData={data}>
                         {data}
                     </Card>
                     </div>
                     <div  className="b">
-                    <Card title={<h3>Event</h3>}>
+                    <Card title={<h3>Event</h3>} modalData={data}>
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>}>
+                    <Card title={<h3>Event</h3>} modalData={data}>
                         {data}
                     </Card>
                     </div>
