@@ -3,13 +3,13 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const config = {
-  apiKey: "AIzaSyCxEx9YTOnVTZL7F1508X3hkETMZor4y98",
-  authDomain: "apna-dukaan-db.firebaseapp.com",
-  projectId: "apna-dukaan-db",
-  storageBucket: "apna-dukaan-db.appspot.com",
-  messagingSenderId: "973250682967",
-  appId: "1:973250682967:web:974b15412cd1eecb4dc312",
-  measurementId: "G-FV8JYZS2KQ"
+  apiKey: "AIzaSyCq1rswUACT_7n-STZAgMg860bq8doKPKA",
+    authDomain: "magnate21.firebaseapp.com",
+    projectId: "magnate21",
+    storageBucket: "magnate21.appspot.com",
+    messagingSenderId: "51613216620",
+    appId: "1:51613216620:web:9e143231ff54759bd8cd49",
+    measurementId: "G-H9WF1R70HC"
 };
 
 firebase.initializeApp(config);

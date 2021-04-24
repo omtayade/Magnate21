@@ -11,6 +11,12 @@ import { ReactComponent as Logo } from '../../assets/cart.svg';
 import CartIcon from '../Cart-dropdown/cartIcon.component'
 import './headers.styles.scss';
 
+const handleClick =() =>{
+   auth.signOut()
+  //  <Redirect to="/signin" />
+
+}
+
 const Header = ({ currentUser , hidden }) => (
   <div className='header'>
     <Link className='logo-container' to='/'>
@@ -36,12 +42,12 @@ const Header = ({ currentUser , hidden }) => (
         Team
       </Link>
       {currentUser ? (
-        <div className='option' onClick={() => auth.signOut()}>
+        <Link className='option' to='/signin' onClick={handleClick}>
           SIGN OUT
-        </div>
+        </Link>
       ) : (
-        <Link className='option' to='/signin'>
-          SIGN IN
+        <Link className='option' to='/signup'>
+          Login/Register
         </Link>
       )}
       <CartIcon/>
