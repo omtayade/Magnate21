@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/headers/headers.component'
+// import Header from './components/headers/headers.component'
 import {auth , createUserProfile} from './firebase/firebase.utils'
 import './App.css';
 import {Route, Switch ,Redirect } from 'react-router-dom';
@@ -11,8 +11,9 @@ import AboutUs from './pages/About us/about-us.component'
 import SignIn from './pages/sign-in/sign-in.component'
 import SignUp from './pages/Sign-up/sign-up.component';
 import ForgotPassword from './components/forgot-password/forgot-password.component'
+import Navbar from './components/Navbar/Navbar'
+
 class App extends React.Component {
- 
 
 
  unsubscribeFromAuth = null;
@@ -49,7 +50,7 @@ componentWillUnmount(){
   render (){
     return (
       <div className="App">
-        <Header />
+        <Navbar />
         <Switch>
           
           <Route exact path='/signin/forgot-password' component={ForgotPassword} />
