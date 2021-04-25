@@ -2,13 +2,14 @@ import React from 'react';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
 import Header from './components/headers/headers.component'
 import {auth , createUserProfile} from './firebase/firebase.utils'
-import './App.css';
+//import './App.css';
 import {Route, Switch ,Redirect } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {setCurrentUser} from './redux/user/user.actions'
 import {selectCurrentUser} from './redux/user/user.selectors'
 import {createStructuredSelector} from 'reselect'
 import AboutUs from './pages/About us/about-us.component'
+import Body from './pages/events/Body'
 
 
 class App extends React.Component {
@@ -48,7 +49,7 @@ componentWillUnmount(){
   render (){
     return (
       <div className="App">
-        <Header />
+        {/* <Header />
         <Switch>
           
           
@@ -59,7 +60,8 @@ componentWillUnmount(){
               (<SignInAndSignUp/>) 
                 
                 } />
-        </Switch>
+        </Switch> */}
+        <Body/>
        
       </div>
    );

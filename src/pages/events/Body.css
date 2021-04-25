@@ -23,6 +23,7 @@
   margin-bottom: 2%;
 }
 .app__body__heading > a {
+  color: rgb(255, 102, 0);
   top: 10;
   cursor: pointer;
 }
@@ -61,18 +62,20 @@
 .app__body__cards > div {
   flex: 50%;
   width: 100%;
+  max-width: 50%;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: row;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 900px) {
   .app__body__cards {
     flex-direction: column;
   }
   .app__body__cards > div {
     flex-direction: row;
+    max-width: none;
   }
 }
 
@@ -82,5 +85,6 @@
   }
   .app__body__cards > div {
     flex-direction: column;
+    max-width: none;
   }
 }

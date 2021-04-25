@@ -1,7 +1,7 @@
 import React, { useState} from 'react'
-import 'react-responsive-modal/styles.css';
+import { AppModal } from '../modal/AppModal';
 import './Card.css'
-import { Modal } from 'react-responsive-modal';
+
 
 function Card({title , children, modalData}) {
 
@@ -38,15 +38,9 @@ function Card({title , children, modalData}) {
             </div>
 
             <div>
-                <Modal open={open} onClose={() => setOpen(false)} classNames={{
-                                                                        overlay: "customOverlay",
-                                                                        modal: "customModal",
-                                                                        }} center>
-                    <h2>Details</h2>
-                    <p>
-                        {modalData}
-                    </p>
-                </Modal>
+                <AppModal open={open} modalTitle={"Details"}  >
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis aliquam asperiores eum a porro. Alias labore quis itaque assumenda ipsam eius? Ipsum hic sint quo ab molestiae blanditiis recusandae. Laborum.
+                </AppModal>
             </div>
         </div>
     )

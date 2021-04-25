@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './Card'
+import Card from '../../components/event-cards/Card'
 import './Body.css'
 
 function Body() {
@@ -47,7 +47,17 @@ function Body() {
                         {data}
                     </Card>
                     </div>
-                </div>  
+                </div>
+                <div className="app__body__cards">
+                    <div className="a">
+                    <Card title={<h3>Event</h3>} modalData={data}>
+                        {data}
+                    </Card>
+                    <Card title={<h3>Event</h3>} modalData={data}>
+                        {data}
+                    </Card>
+                    </div> 
+                </div> 
             </div>
         </>
     )
