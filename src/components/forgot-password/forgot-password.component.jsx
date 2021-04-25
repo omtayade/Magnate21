@@ -36,14 +36,16 @@ handleChange = event =>{
 
 render(){
     return(
-    <div>
-            <h2>Enter your email id</h2>
-            <FormInput type="email" name="email" label="Email" value={this.state.email} handleChange={this.handleChange} required /> 
-            <div style={{display:'flex' }}>
-                <Link to='/signin'>
-                <CustomButton >{''}Back to Login{''}</CustomButton>
-                </Link>
-                <CustomButton onClick={this.resetPassword} isGoogleSignIn>{''}Reset Password{''}</CustomButton>
+    <div className="box">
+            <div className="forgot__password">
+                <h2>Enter your email id</h2>
+                <FormInput type="email" name="email" label="Email" value={this.state.email} handleChange={this.handleChange} required /> 
+                <div style={{display:'flex'}}>
+                    <Link to='/signin'>
+                    <CustomButton >{''}Back to Login{''}</CustomButton>
+                    </Link>
+                    <CustomButton onClick={this.resetPassword} isGoogleSignIn>{''}Reset Password{''}</CustomButton>
+                </div>
             </div>
             
 
