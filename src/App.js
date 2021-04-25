@@ -1,7 +1,7 @@
 import React from 'react';
 // import Header from './components/headers/headers.component'
 import {auth , createUserProfile} from './firebase/firebase.utils'
-//import './App.css';
+import './App.css';
 import {Route, Switch ,Redirect } from 'react-router-dom';
 import {connect} from 'react-redux'
 import {setCurrentUser} from './redux/user/user.actions'
