@@ -2,7 +2,10 @@
     width:380px;
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
+    margin: auto;
+    margin-top: 7vw;
+   
     .title{
         margin :10px 0;
     }
@@ -11,4 +14,11 @@
         display: flex;
         justify-content: space-between;
     }
+}
+.switchPage{
+    width:380px;
+    display: flex;
+    margin: auto;
+    margin-top: 1vw;
+    
 }

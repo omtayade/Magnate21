@@ -1,0 +1,27 @@
+.box{
+    justify-content: center;
+    align-items: center;
+}
+.signup{
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    margin-left: 35vw;
+    margin-top: 3vw;
+}
+.title{
+    margin: 10px 0;
+}
+.switchPage{
+    width: 380px;
+    display: flex;
+    margin-left: 35vw;
+    margin-top: 1vw;
+    h3{
+        color: black;
+    }
+    h4{
+        color: red;
+        margin-left: 10px;
+    }
+}
