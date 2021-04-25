@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import FormInput from '../form-input/form-item.component'
 import CustomButton from '../custom-button/custom-button.component'
 import firebase from 'firebase/app';
+import { Link } from 'react-router-dom';
 // import 'firebase/firestore';
 // import 'firebase/auth';
 
@@ -35,10 +36,18 @@ handleChange = event =>{
 
 render(){
     return(
-    <div>
-            <h2>Enter your email id</h2>
-            <FormInput type="email" name="email" label="Email" value={this.state.email} handleChange={this.handleChange} required /> 
-            <CustomButton onClick={this.resetPassword} isGoogleSignIn>{''}Reset Password{''}</CustomButton>
+    <div className="box">
+            <div className="forgot__password">
+                <h2>Enter your email id</h2>
+                <FormInput type="email" name="email" label="Email" value={this.state.email} handleChange={this.handleChange} required /> 
+                <div style={{display:'flex'}}>
+                    <Link to='/signin'>
+                    <CustomButton >{''}Back to Login{''}</CustomButton>
+                    </Link>
+                    <CustomButton onClick={this.resetPassword} isGoogleSignIn>{''}Reset Password{''}</CustomButton>
+                </div>
+            </div>
+            
 
     </div>
     );
