@@ -1,0 +1,80 @@
+.card {
+  display: flex;
+  flex: 50%;
+  margin: 2%;
+  width: 95%;
+  flex-direction: column;
+  color: rgb(255, 102, 0);
+  border: 2px solid rgb(255, 102, 0);
+  font-size: 150%;
+  text-align: right;
+  overflow: hidden;
+  box-shadow: 5px 5px rgb(255, 102, 0);
+}
+.card__heading {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: 10%;
+}
+
+.card__content {
+  width: initial;
+  height: 65%;
+  text-align: left;
+  padding: 10px;
+}
+
+.card__content > p {
+  font-size: 15px;
+}
+
+.card__content > img {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  float: right;
+}
+
+.card__btn__holder {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.card__btn {
+  padding: 5px;
+  font-size: 15px;
+  background-color: transparent;
+  border: 1px solid rgb(255, 102, 0);
+  border-radius: 5px;
+}
+
+.card__btn:hover {
+  background-color: rgb(255, 102, 0);
+  color: black;
+  cursor: pointer;
+}
+
+.customOverlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+.customModal {
+  background: rgb(255, 102, 0);
+  width: 80vw;
+  min-width: 200px;
+}
+
+/* abstract bg */
+@media only screen and (max-width: 768px) {
+  .card {
+    float: inline-start;
+  }
+}
