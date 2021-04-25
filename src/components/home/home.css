@@ -111,3 +111,15 @@
         font-size: 3em;
     }
 }
+
+.event-details{
+    padding: 50px;
+}
+
+.options-list{
+    display: flex;
+}
+
+.options-list li{
+    cursor: pointer;
+}

@@ -43,6 +43,7 @@ class App extends React.Component {
 
      
     }
+    
     setCurrentUser(userAuth);
  
   });
@@ -63,7 +64,7 @@ componentWillUnmount(){
         <Switch>
           
           <Route exact path='/signin/forgot-password' component={ForgotPassword} />
-          <Route exact path='/home' component={Home} />
+          <Route exact path='/' component={Home} />
          <Route exact path='/about-us' component={AboutUs} />
          <Route exact path='/events' component={Body} />
          <Route exact path='/signin' component={SignIn} />

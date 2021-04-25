@@ -1,6 +1,22 @@
 body {
   font-family: "Open Sans Condensed", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 9px;               /* width of the entire scrollbar */
+  height: 30px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(14, 12, 12);        /* color of the tracking area */
+}
+body::-webkit-scrollbar-thumb {
+  background-color: orangered;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
  
+  /* border: 3px solid orangered;  creates padding around scroll thumb */
 }
 
 a {
