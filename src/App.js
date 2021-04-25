@@ -64,14 +64,15 @@ componentWillUnmount(){
           
           <Route exact path='/signin/forgot-password' component={ForgotPassword} />
          <Route exact path='/about-us' component={AboutUs} />
+         <Route exact path='/events' component={Body} />
          <Route exact path='/signin' component={SignIn} />
           <Route exact path='/signup' render={()=>
               this.props.currentUser ? (<Redirect to='/' />) :
               (<SignUp/>) 
                 
                 } />
-        </Switch> */}
-        <Body/>
+        </Switch> 
+       
        
       </div>
    );

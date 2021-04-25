@@ -26,6 +26,7 @@ class SignUp extends React.Component{
 
         user.sendEmailVerification().then(function(){
         alert("Verify your email! Email verification link sent to your registered email-id");
+       
         });
         }
         catch(error){
