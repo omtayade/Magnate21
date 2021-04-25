@@ -43,7 +43,7 @@ class SignIn extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="box">
                 <div className="sign-in">
                     <h2 style={{color:"black"}}>I already have an account</h2>
                     <span style={{color:"black"}}>Sign in with your email and password</span>
