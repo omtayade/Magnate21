@@ -41,7 +41,7 @@ render(){
             <FormInput type="email" name="email" label="Email" value={this.state.email} handleChange={this.handleChange} required /> 
             <div style={{display:'flex' }}>
                 <Link to='/signin'>
-                <CustomButton inverted>{''}Back to Login{''}</CustomButton>
+                <CustomButton >{''}Back to Login{''}</CustomButton>
                 </Link>
                 <CustomButton onClick={this.resetPassword} isGoogleSignIn>{''}Reset Password{''}</CustomButton>
             </div>
