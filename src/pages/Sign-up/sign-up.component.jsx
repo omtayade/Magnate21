@@ -1,11 +1,8 @@
 import React from 'react'
 import FormInput from '../../components/form-input/form-item.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
-// import {AppModal} from '../../components/modal/AppModal'
 import 'react-responsive-modal/styles.css';
-// import {selectCurrentUser} from '../../redux/user/user.selectors'
-// import {createStructuredSelector} from 'reselect'
-// import { Modal } from 'react-responsive-modal';
+
 
 import {auth , createUserProfile} from '../../firebase/firebase.utils'
 import './sign-up.styles.scss'
@@ -13,7 +10,7 @@ import {Link} from 'react-router-dom'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
-import { connect } from 'react-redux';
+
 class SignUp extends React.Component{
     constructor(){
      super();
@@ -23,7 +20,7 @@ class SignUp extends React.Component{
          email:'',
          password:'',
          confirmPassword:'',
-         open:false
+         
      }
     }
     
@@ -36,7 +33,6 @@ class SignUp extends React.Component{
         
        
         }) 
-        // .then(user.emailVerified?alert("Email verified"):alert("Not verified"));
         }
         catch(error){
            alert("Error!");
@@ -73,7 +69,7 @@ class SignUp extends React.Component{
         }
         
        
-         const user =firebase.auth().currentUser;
+         const user = firebase.auth().currentUser;
         if(user) this.sendEmailVerification();
     }
 
@@ -106,11 +102,7 @@ class SignUp extends React.Component{
                     </Link>
                     
                 </div>
-                {/* {this.currentUser && this.state.open ?(
-                    <div>
-                    <Modal open={this.state.open} onClose={()=>this.setState({open:false})}>Verify your email! Email verification link sent to your registered email-id </Modal>
-                    </div>
-                ):null} */}
+                
                 
             </div>
             

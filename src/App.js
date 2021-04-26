@@ -24,41 +24,39 @@ class App extends React.Component {
 
 
  unsubscribeFromAuth = null;
+ 
 
-  // componentDidUpdate(){
-  //   var userAuth =firebase.auth().currentUser;
-  //   const emailverified =userAuth.emailVerified;
-  //   console.log(emailverified) 
-  //   if(emailverified) alert("Email verified")
-  // }
-
+  
  componentDidMount(){
 
     const {setCurrentUser} = this.props;
     this.unsubscribeFromAuth= auth.onAuthStateChanged(async userAuth => {
-    if(userAuth){
+      if(userAuth){
 
-     const userRef = await  createUserProfile(userAuth);  //App.js me createuserProfile user ko database me dalne ka kaam nahi kar raha hai vo to signup compo me hi ho jaata hai  ,yaha pe ye bas database me already stored user ka userRef bhej raha hai taki ham apne state me daal sake,  
-    const emailverified =userAuth.emailVerified; 
-    console.log(emailverified)
-    
-    userRef.onSnapshot(snapShot =>{
-        setCurrentUser({
-          
-          id:snapShot.id,
-          ...snapShot.data()
-          
+      const userRef = await  createUserProfile(userAuth);  //App.js me createuserProfile user ko database me dalne ka kaam nahi kar raha hai vo to signup compo me hi ho jaata hai  ,yaha pe ye bas database me already stored user ka userRef bhej raha hai taki ham apne state me daal sake,  
+      
+      const emailverified =userAuth.emailVerified; 
+      console.log(emailverified)
+      
+        userRef.onSnapshot(snapShot =>{
+          setCurrentUser({
+            
+            id:snapShot.id,
+            ...snapShot.data()
+            
+          });
         });
-      });
 
-     
-    }
-    setCurrentUser(userAuth);
+      
+      }
+      setCurrentUser(userAuth);
  
-  });
+    });
+   
 }
 componentWillUnmount(){
   this.unsubscribeFromAuth();
+  
 }
   
  
