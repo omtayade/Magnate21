@@ -1,11 +1,11 @@
 import React from 'react'
 import FormInput from '../../components/form-input/form-item.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
-import {AppModal} from '../../components/modal/AppModal'
+// import {AppModal} from '../../components/modal/AppModal'
 import 'react-responsive-modal/styles.css';
-import {selectCurrentUser} from '../../redux/user/user.selectors'
-import {createStructuredSelector} from 'reselect'
-import { Modal } from 'react-responsive-modal';
+// import {selectCurrentUser} from '../../redux/user/user.selectors'
+// import {createStructuredSelector} from 'reselect'
+// import { Modal } from 'react-responsive-modal';
 
 import {auth , createUserProfile} from '../../firebase/firebase.utils'
 import './sign-up.styles.scss'
@@ -26,20 +26,22 @@ class SignUp extends React.Component{
          open:false
      }
     }
-    currentUser = this.props;
+    
         
     sendEmailVerification =()=>{
         try{
         var user =  firebase.auth().currentUser;
-        // alert("Verify your email! Email verification link sent to your registered email-id");
+        alert("Verify your email! Email verification link sent to your registered email-id");
         user.sendEmailVerification().then(function(){
         
        
-        });
+        }) 
+        // .then(user.emailVerified?alert("Email verified"):alert("Not verified"));
         }
         catch(error){
            alert("Error!");
-        };
+        }
+       
     }
 
     handleSubmit=async event =>{
@@ -65,11 +67,12 @@ class SignUp extends React.Component{
             });
         }
         catch(error){
-            console.log(error);
+            
             alert(error.message)
 
         }
-        console.log(this.currentUser)
+        
+       
          const user =firebase.auth().currentUser;
         if(user) this.sendEmailVerification();
     }
@@ -103,11 +106,11 @@ class SignUp extends React.Component{
                     </Link>
                     
                 </div>
-                {this.currentUser && this.state.open ?(
+                {/* {this.currentUser && this.state.open ?(
                     <div>
                     <Modal open={this.state.open} onClose={()=>this.setState({open:false})}>Verify your email! Email verification link sent to your registered email-id </Modal>
                     </div>
-                ):null}
+                ):null} */}
                 
             </div>
             
@@ -115,9 +118,6 @@ class SignUp extends React.Component{
         }
 }
 
-const mapStateToProps = createStructuredSelector({
-    currentUser:selectCurrentUser
-   
-  });
 
-export default connect(mapStateToProps)(SignUp)
+
+export default SignUp

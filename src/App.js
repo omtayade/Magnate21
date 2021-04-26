@@ -10,7 +10,9 @@ import {createStructuredSelector} from 'reselect'
 import AboutUs from './pages/About us/about-us.component'
 
 import Body from './pages/events/Body'
-
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
 
 import SignIn from './pages/sign-in/sign-in.component'
 import SignUp from './pages/Sign-up/sign-up.component';
@@ -23,6 +25,13 @@ class App extends React.Component {
 
  unsubscribeFromAuth = null;
 
+  // componentDidUpdate(){
+  //   var userAuth =firebase.auth().currentUser;
+  //   const emailverified =userAuth.emailVerified;
+  //   console.log(emailverified) 
+  //   if(emailverified) alert("Email verified")
+  // }
+
  componentDidMount(){
 
     const {setCurrentUser} = this.props;
@@ -32,6 +41,7 @@ class App extends React.Component {
      const userRef = await  createUserProfile(userAuth);  //App.js me createuserProfile user ko database me dalne ka kaam nahi kar raha hai vo to signup compo me hi ho jaata hai  ,yaha pe ye bas database me already stored user ka userRef bhej raha hai taki ham apne state me daal sake,  
     const emailverified =userAuth.emailVerified; 
     console.log(emailverified)
+    
     userRef.onSnapshot(snapShot =>{
         setCurrentUser({
           
