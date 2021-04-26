@@ -1,15 +1,35 @@
 import React, { useState} from 'react'
 import { AppModal } from '../modal/AppModal';
 import './Card.css'
+import {connect} from 'react-redux'
+import {createStructuredSelector} from 'reselect'
+import {auth} from '../../firebase/firebase.utils'
+import {selectCurrentUser} from '../../redux/user/user.selectors'
+import { Redirect } from 'react-router';
 
 
-function Card({title , children, modalData}) {
+
+function Card({title , children, CurrentUser}) {
 
 
     const [open, setOpen] = useState(false);
 
-    const [isRegister, setisRegister] = useState(false)
+    const [isRegister, setisRegister] = useState(false);
 
+    const handleClick=()=>{
+       
+
+        if(CurrentUser){
+            auth.currentUser.reload();    
+            if(auth.currentUser.emailVerified && CurrentUser ) setisRegister(!isRegister);
+            else if(auth.currentUser.emailVerified==false && CurrentUser) alert("Verify email first!");
+        }
+        else {
+            alert("Login first");
+           
+        }
+
+    }
 
 
     return (
@@ -25,7 +45,7 @@ function Card({title , children, modalData}) {
 
             <div className="card__footer">
                 <div className="card__btn__holder">
-                    <div className="card__btn" onClick={()=>setisRegister(!isRegister)}>
+                    <div className="card__btn" onClick={handleClick}>
                         {isRegister ? "Registered" : "Register"}
                     </div>
                 </div>
@@ -46,4 +66,8 @@ function Card({title , children, modalData}) {
     )
 }
 
-export default Card
+const mapStateToProps = createStructuredSelector({
+    // currentUser: state.user.currentUser  //Equal as=> currentUser:rootReducer.userReducer.currentUser
+    CurrentUser:selectCurrentUser
+});
+export default connect(mapStateToProps) (Card);
