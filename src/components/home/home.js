@@ -11,6 +11,14 @@ const Home = (props) => {
         setDetail(detail);
     }
 
+    const draftDetails = [
+        "Startup Expo is an exhibition event for startup models. The viewers will get an opportunity to get exposure to a successfully implemented startup and business model from ideation to funding stage and get motivated to be a job creator. The participants will present the roadmap of their implemented startup and win a chance to get exciting prizes.",
+        "Round1: Every Contestant needs to present the following points in front of judges and the audience. They need to elaborate each point within a 5-minute time span.",
+        "The final score would be decided on 80/20 principle where 20 percent audience vote would be considered along with 80 percent of judges.",
+        "1. The Jury can ask frequent questions anytime in between. And the participants need to respond in a very short and precise manner.\n 2. Contestant’s need to elaborate each point within a 5-minute time span.\n 3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.",
+        "Companies investing in startups, R&D’s, Investors, Startup building organizations, Incubation centers"
+    ];
+
     return (
         <div className="home">
             {/* <div className="video">
@@ -28,19 +36,22 @@ const Home = (props) => {
                 </div>
             </div> */}
             <div className="event-details">
-                <ol className="options-list">
-                    <li onClick={()=> changeDetail('description')}>description</li>
-                    <li onClick={()=> changeDetail('mode')}>mode</li>
-                    <li onClick={()=> changeDetail('method')}>method</li>
-                    <li onClick={()=> changeDetail('rules')}>rules</li>
-                    <li onClick={()=> changeDetail('sponsors')}>sponsors</li>
-                </ol>
-                <div className="event-content">
-                    {detail==='description' ? <p>description</p> :null}
-                    {detail==='mode' ? <p>mode</p> :null}
-                    {detail==='method' ? <p>method</p> :null}
-                    {detail==='rules' ? <p>rules</p> :null}
-                    {detail==='sponsors' ? <p>sponsors</p> :null}
+                <h1 className="event-heading">STARTUP EXPO</h1>
+                <div className="draft">
+                    <div className="options">
+                        <div onClick={()=> changeDetail('description')}>DESCRIPTION</div>
+                        <div onClick={()=> changeDetail('format')}>FORMAT</div>
+                        <div onClick={()=> changeDetail('evaluation')}>EVALUATION</div>
+                        <div onClick={()=> changeDetail('rules')}>RULES</div>
+                        <div onClick={()=> changeDetail('sponsors')}>SPONSORS</div>
+                    </div>
+                    <div className="option-content">
+                        {detail=="description" ? draftDetails[0] : null}
+                        {detail=="format" ? draftDetails[1] : null}
+                        {detail=="evaluation" ? draftDetails[2] : null}
+                        {detail=="rules" ? draftDetails[3] : null}
+                        {detail=="sponsors" ? draftDetails[4] : null}
+                    </div>
                 </div>
             </div>
         </div>
