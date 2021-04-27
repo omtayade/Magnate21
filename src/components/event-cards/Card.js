@@ -6,7 +6,7 @@ import {createStructuredSelector} from 'reselect'
 import {auth} from '../../firebase/firebase.utils'
 import {selectCurrentUser} from '../../redux/user/user.selectors'
 import { Redirect } from 'react-router';
-
+ import {createEventsCollection} from '../../firebase/firebase.utils'
 
 
 function Card({title , children, CurrentUser}) {
@@ -16,12 +16,28 @@ function Card({title , children, CurrentUser}) {
 
     const [isRegister, setisRegister] = useState(false);
 
-    const handleClick=()=>{
+    const handleClick=async()=>{
        
 
         if(CurrentUser){
             auth.currentUser.reload();    
-            if(auth.currentUser.emailVerified && CurrentUser ) setisRegister(!isRegister);
+            if(auth.currentUser.emailVerified && CurrentUser ) {
+                // console.log(auth.currentUser.uid)
+
+                try{
+                    if(isRegister==false){
+                       await createEventsCollection(title);
+                        setisRegister(true);
+                    }
+                }
+                catch(error){
+                    console.log(error.message)
+                }
+                
+               
+                
+            
+            }
             else if(auth.currentUser.emailVerified==false && CurrentUser) alert("Verify email first!");
         }
         else {

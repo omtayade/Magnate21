@@ -19,7 +19,7 @@ class ForgotPassword extends React.Component{
     var auth = firebase.auth();
    
     auth.sendPasswordResetEmail(this.state.email).then(function() {
-    
+        alert("Password reset link has been sent to registerd email Id")
     }).catch(function(error) {
     alert(error.message)
     });
