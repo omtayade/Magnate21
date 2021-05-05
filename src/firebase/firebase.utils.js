@@ -19,8 +19,7 @@ export const createUserProfile = async (userAuth, additionalData) => {
   
   
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-  // const temp=firestore.collection('users');
-  const eventRef = firestore.doc(`users/${userAuth.uid}/events/ignore`)
+  
   const snapShot = await userRef.get();
   console.log(snapShot)
   if (!snapShot.exists) {
@@ -35,10 +34,8 @@ export const createUserProfile = async (userAuth, additionalData) => {
         ...additionalData
 
       });
-      await eventRef.set({})
-      // await temp.set({
-      //   ...additionalData
-      // })
+      
+     
     } catch (error) {
       console.log('error creating user', error.message);
     }
@@ -51,15 +48,18 @@ export const createUserProfile = async (userAuth, additionalData) => {
 
 export const createEventsCollection = async (title) => {
   const eventRef = firestore.doc(`users/${firebase.auth().currentUser.uid}/events/${title}`)
-  console.log(eventRef)
+  
   try{
-        await eventRef.set({title});
+        await eventRef.set({
+          title
+        });
         
     
   }
   catch(error){
       console.log(error.message)
   }
+  
   return eventRef;
 };
 
