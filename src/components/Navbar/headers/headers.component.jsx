@@ -41,7 +41,8 @@ const Ul = styled.ul`
 
 
 const handleClick =() =>{
-   auth.signOut()
+   auth.signOut();
+  
   
 
 }

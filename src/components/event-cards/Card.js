@@ -3,11 +3,13 @@ import { AppModal } from '../modal/AppModal';
 import './Card.css'
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
-import {auth} from '../../firebase/firebase.utils'
+import {auth , firestore } from '../../firebase/firebase.utils'
 import {selectCurrentUser} from '../../redux/user/user.selectors'
 import { Redirect } from 'react-router';
  import {createEventsCollection} from '../../firebase/firebase.utils'
-
+//  import firebase from 'firebase/app';
+//  import 'firebase/firestore';
+//  import 'firebase/auth';
 
 function Card({title , children, CurrentUser}) {
 
@@ -15,6 +17,19 @@ function Card({title , children, CurrentUser}) {
     const [open, setOpen] = useState(false);
 
     const [isRegister, setisRegister] = useState(false);
+    
+    const fetchEvents =async() =>{
+        if (auth.currentUser){
+            const eventRef = firestore.doc(`users/${auth.currentUser.uid}/events/${title}`)
+            const snapShot = await eventRef.get();
+            if(snapShot.exists){
+                setisRegister(true);
+            }
+        }
+        return 0;
+    }
+    
+     fetchEvents();
 
     const handleClick=async()=>{
        
