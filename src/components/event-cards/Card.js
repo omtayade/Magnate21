@@ -7,9 +7,9 @@ import {auth , firestore } from '../../firebase/firebase.utils'
 import {selectCurrentUser} from '../../redux/user/user.selectors'
 import { Redirect } from 'react-router';
  import {createEventsCollection} from '../../firebase/firebase.utils'
-//  import firebase from 'firebase/app';
-//  import 'firebase/firestore';
-//  import 'firebase/auth';
+ import firebase from 'firebase/app';
+ import 'firebase/firestore';
+ import 'firebase/auth';
 
 function Card({title , children, CurrentUser}) {
 
@@ -26,7 +26,7 @@ function Card({title , children, CurrentUser}) {
                 setisRegister(true);
             }
         }
-        return 0;
+        return 1;
     }
     
      fetchEvents();
@@ -35,9 +35,8 @@ function Card({title , children, CurrentUser}) {
        
 
         if(CurrentUser){
-            auth.currentUser.reload();    
+            await auth.currentUser.reload(); 
             if(auth.currentUser.emailVerified && CurrentUser ) {
-                // console.log(auth.currentUser.uid)
 
                 try{
                     if(isRegister==false){
@@ -48,12 +47,10 @@ function Card({title , children, CurrentUser}) {
                 catch(error){
                     console.log(error.message)
                 }
-                
-               
-                
-            
+                  
             }
             else if(auth.currentUser.emailVerified==false && CurrentUser) alert("Verify email first!");
+        
         }
         else {
             alert("Login first");
