@@ -46,12 +46,23 @@ export const createUserProfile = async (userAuth, additionalData) => {
 
 
 
-export const createEventsCollection = async (title) => {
+export const createEventsCollection = async (title , CurrentUser) => {
+  const userAuth =firebase.auth().currentUser;
+  const { email } =userAuth;
+   const {displayName}=CurrentUser;
+  const registeredAt = new Date();
+
   const eventRef = firestore.doc(`users/${firebase.auth().currentUser.uid}/events/${title}`)
-  
+  const eventWiseCollectionRef = firestore.doc(`events/${title}/users/${displayName}`)
+ 
   try{
         await eventRef.set({
           title
+        });
+        await eventWiseCollectionRef.set({
+        displayName,
+        email,
+        registeredAt
         });
         
     
@@ -62,6 +73,10 @@ export const createEventsCollection = async (title) => {
   
   return eventRef;
 };
+
+// export const setEventWiseData = async(user) =>{
+//   const
+// }
 
 
 

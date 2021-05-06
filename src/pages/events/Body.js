@@ -32,28 +32,28 @@ function Body() {
                 </div>
                 <div className="app__body__cards">
                     <div className="a">
-                    <Card title="Event 5" modalData={data}>
+                    <Card title="Event5" modalData={data}>
                         {data}
                     </Card>
-                    <Card title="Event 6" modalData={data}>
+                    <Card title="Event6" modalData={data}>
                         {data}
                     </Card>
                     </div>
                     <div  className="b">
-                    <Card title="Event 7" modalData={data}>
+                    <Card title="Event7" modalData={data}>
                         {data}
                     </Card>
-                    <Card title="Event 8 " modalData={data}>
+                    <Card title="Event8 " modalData={data}>
                         {data}
                     </Card>
                     </div>
                 </div>
                 <div className="app__body__cards">
                     <div className="a">
-                    <Card title="Event 9 " modalData={data}>
+                    <Card title="Event9 " modalData={data}>
                         {data}
                     </Card>
-                    <Card title="Event 10" modalData={data}>
+                    <Card title="Event10" modalData={data}>
                         {data}
                     </Card>
                     </div> 

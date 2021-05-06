@@ -40,7 +40,7 @@ function Card({title , children, CurrentUser}) {
 
                 try{
                     if(isRegister==false){
-                       await createEventsCollection(title);
+                       await createEventsCollection(title , CurrentUser);
                         setisRegister(true);
                     }
                 }
