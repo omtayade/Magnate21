@@ -10,6 +10,8 @@ import { Redirect } from 'react-router';
  import firebase from 'firebase/app';
  import 'firebase/firestore';
  import 'firebase/auth';
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 function Card({title , children, CurrentUser}) {
 
@@ -33,6 +35,20 @@ function Card({title , children, CurrentUser}) {
     
      fetchEvents();
 
+    const confirmRegister =async()=>{
+        try{
+            if(isRegister==false){
+               await createEventsCollection(title , CurrentUser);
+                setisRegister(true);
+                setBtnColor(true);
+            }
+        }
+        catch(error){
+            console.log(error.message)
+        }
+
+    }
+
     const handleClick=async()=>{
        
 
@@ -40,16 +56,27 @@ function Card({title , children, CurrentUser}) {
             await auth.currentUser.reload(); 
             if(auth.currentUser.emailVerified && CurrentUser ) {
 
-                try{
-                    if(isRegister==false){
-                       await createEventsCollection(title , CurrentUser);
-                        setisRegister(true);
-                        setBtnColor(true);
-                    }
-                }
-                catch(error){
-                    console.log(error.message)
-                }
+                confirmAlert({
+                    title: 'Confirm to submit',
+                    message: `Are you sure you want to register for ${title} ?`,
+                    buttons: [
+                      {
+                        label: 'Yes',
+                        onClick: () =>{
+                            confirmRegister();
+                        }
+                      },
+                      {
+                        label: 'No',
+                        onClick: () => {}
+                      }
+                    ]
+                  });
+
+
+
+
+                
                   
             }
             else if(auth.currentUser.emailVerified==false && CurrentUser) alert("Verify email first!");

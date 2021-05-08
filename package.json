@@ -9,6 +9,7 @@
     "firebase": "^8.2.4",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
+    "react-confirm-alert": "^2.7.0",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
     "react-responsive-modal": "^6.0.1",
