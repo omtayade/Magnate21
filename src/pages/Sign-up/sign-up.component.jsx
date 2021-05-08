@@ -1,12 +1,16 @@
 import React from 'react'
 import FormInput from '../../components/form-input/form-item.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
+import 'react-responsive-modal/styles.css';
+
+
 import {auth , createUserProfile} from '../../firebase/firebase.utils'
 import './sign-up.styles.scss'
 import {Link} from 'react-router-dom'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+
 class SignUp extends React.Component{
     constructor(){
      super();
@@ -15,23 +19,25 @@ class SignUp extends React.Component{
          displayName:'',
          email:'',
          password:'',
-         confirmPassword:''
+         confirmPassword:'',
+         
      }
     }
-
-
+    
+        
     sendEmailVerification =()=>{
         try{
         var user =  firebase.auth().currentUser;
-
-        user.sendEmailVerification().then(function(){
         alert("Verify your email! Email verification link sent to your registered email-id");
+        user.sendEmailVerification().then(function(){
+        
        
-        });
+        }) 
         }
         catch(error){
-           alert();
-        };
+           alert("Error!");
+        }
+       
     }
 
     handleSubmit=async event =>{
@@ -57,11 +63,14 @@ class SignUp extends React.Component{
             });
         }
         catch(error){
-            console.log(error);
+            
             alert(error.message)
 
         }
-        this.sendEmailVerification();
+        
+       
+         const user = firebase.auth().currentUser;
+        if(user) this.sendEmailVerification();
     }
 
     handleChange= event =>{
@@ -71,6 +80,7 @@ class SignUp extends React.Component{
     }
 
     render(){
+       
         const {displayName , email , password , confirmPassword } = this.state;
         return(
             <div className="box">
@@ -82,7 +92,7 @@ class SignUp extends React.Component{
                         <FormInput type="email" name="email" label="Email" value={email} handleChange={this.handleChange} required /> 
                         <FormInput type="password" name="password" label="Password" value={password} handleChange={this.handleChange} required /> 
                         <FormInput type="password" name="confirmPassword" label="Confirm Password" value={confirmPassword} handleChange={this.handleChange} required /> 
-                        <CustomButton type='submit'>SIGN UP</CustomButton>
+                        <CustomButton type='submit' onClick={() => this.setState({open:true})}>SIGN UP</CustomButton>
                     </form>
                 </div>
                 <div className="switchPage">
@@ -92,9 +102,14 @@ class SignUp extends React.Component{
                     </Link>
                     
                 </div>
+                
+                
             </div>
             
         );
         }
 }
+
+
+
 export default SignUp
