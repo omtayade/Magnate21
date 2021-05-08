@@ -17,6 +17,7 @@ function Card({title , children, CurrentUser}) {
     const [open, setOpen] = useState(false);
 
     const [isRegister, setisRegister] = useState(false);
+    const [BtnColor , setBtnColor] = useState(false);
     
     const fetchEvents =async() =>{
         if (auth.currentUser){
@@ -24,6 +25,7 @@ function Card({title , children, CurrentUser}) {
             const snapShot = await eventRef.get();
             if(snapShot.exists){
                 setisRegister(true);
+                setBtnColor(true);
             }
         }
         return 1;
@@ -42,6 +44,7 @@ function Card({title , children, CurrentUser}) {
                     if(isRegister==false){
                        await createEventsCollection(title , CurrentUser);
                         setisRegister(true);
+                        setBtnColor(true);
                     }
                 }
                 catch(error){
@@ -73,7 +76,7 @@ function Card({title , children, CurrentUser}) {
 
             <div className="card__footer">
                 <div className="card__btn__holder">
-                    <div className="card__btn" onClick={handleClick}>
+                    <div className="card__btn" style={ BtnColor?{backgroundColor:"rgb(255, 102, 0)" , color: "black"}:null} onClick={handleClick}>
                         {isRegister ? "Registered" : "Register"}
                     </div>
                 </div>
