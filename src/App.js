@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
+import "react-toastify/dist/ReactToastify.css";
 import AboutUs from "./pages/About us/about-us.component";
 
 import Body from "./pages/events/Body";
@@ -21,6 +22,7 @@ import SignUp from "./pages/Sign-up/sign-up.component";
 import ForgotPassword from "./components/forgot-password/forgot-password.component";
 import Navbar from "./components/Navbar/Navbar";
 import Carousel from "./pages/Speakers/Carousel";
+import { ToastContainer } from "react-toastify";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;

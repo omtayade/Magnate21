@@ -16,6 +16,7 @@ import "firebase/firestore";
 import "firebase/auth";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import { toast } from "react-toastify";
 
 function Card({ title, children, CurrentUser }) {
   const [open, setOpen] = useState(false);
@@ -56,6 +57,15 @@ function Card({ title, children, CurrentUser }) {
       await createEventsCollection(title, CurrentUser);
       setisRegister(true);
       setBtnColor(true);
+      toast.success("Registered successfully", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } catch (error) {
       console.log(error.message);
     }
@@ -84,9 +94,25 @@ function Card({ title, children, CurrentUser }) {
           });
         }
       } else if (auth.currentUser.emailVerified == false && CurrentUser)
-        alert("Verify email first!");
+        toast.warn("Verify Email first!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
     } else {
-      alert("Login first");
+      toast.warn("Login first!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 

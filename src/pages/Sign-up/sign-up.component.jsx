@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import { toast } from "react-toastify";
 
 class SignUp extends React.Component {
   constructor() {
@@ -26,22 +27,62 @@ class SignUp extends React.Component {
   sendEmailVerification = () => {
     try {
       var user = firebase.auth().currentUser;
-      alert(
-        "Verify your email! Email verification link sent to your registered email-id"
+      toast.success(
+        "Verify your email! Email verification link sent to your registered email-id",
+        {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        }
       );
       user.sendEmailVerification().then(function () {});
     } catch (error) {
-      alert("Error!");
+      toast.error("Error!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
   handleSubmit = async (event) => {
     event.preventDefault();
 
+    const reg = new RegExp(
+      "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"
+    );
+
     const { displayName, email, phone, password, confirmPassword } = this.state;
 
     if (password != confirmPassword) {
-      alert("Passwords don't match , Re-enter password !");
+      toast.error("Passwords don't match , Re-enter password !", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+      return;
+    } else if (!reg.test(password)) {
+      toast.error("Try a stronger password", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       return;
     }
 
@@ -60,7 +101,15 @@ class SignUp extends React.Component {
         confirmPassword: "",
       });
     } catch (error) {
-      alert(error.message);
+      toast.error(error.message, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
 
     const user = firebase.auth().currentUser;
@@ -102,7 +151,8 @@ class SignUp extends React.Component {
               required
             />
             <FormInput
-              type="text"
+              type="tel"
+              pattern="[1-9]{1}[0-9]{9}"
               name="phone"
               label="Enter your mobile mumber"
               value={phone}
