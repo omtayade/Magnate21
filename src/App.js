@@ -10,7 +10,7 @@ import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selectors";
 import { createStructuredSelector } from "reselect";
 import AboutUs from "./pages/About us/about-us.component";
-
+import Home from './components/home/home'
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
@@ -61,6 +61,7 @@ class App extends React.Component {
           pauseOnHover
         />
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route
             exact
             path="/signin/forgot-password"
