@@ -88,7 +88,7 @@ class SignUp extends React.Component{
             <div className="box">
                 <div className='signup'>
                     <h2  className='title' style={{color:"black"}}>Don't have an account ?</h2>
-                    <span style={{color:"black"}}>Sign up with your email and password</span>
+                    <span style={{color:"black"}}>SIGN UP</span>
                     <form className='sign-up-form' onSubmit={this.handleSubmit} >
                         <FormInput type="text" name="displayName" label="Username" value={displayName} handleChange={this.handleChange} required /> 
                         <FormInput type="email" name="email" label="Email" value={email} handleChange={this.handleChange} required /> 
