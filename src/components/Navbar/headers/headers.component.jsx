@@ -23,14 +23,14 @@ const Ul = styled.ul`
   }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #0D2538;
+    background-color: #e85d04;
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     top: 0;
     right: 0;
     height: 100%;
     padding-top: 3.5rem;
-    z-index: 1;
+    z-index: 100;
     transition: transform 0.3s ease-in-out;
     li .option{
       color: white;

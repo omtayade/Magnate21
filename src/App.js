@@ -11,6 +11,7 @@ import AboutUs from "./pages/About us/about-us.component";
 
 import Body from "./pages/events/Body";
 
+import Home from "./components/home/home";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
@@ -48,8 +49,19 @@ class App extends React.Component {
     return (
       <div className="App">
         <Navbar />
-
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route
             exact
             path="/signin/forgot-password"
