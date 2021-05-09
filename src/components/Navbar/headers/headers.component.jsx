@@ -30,7 +30,7 @@ const Ul = styled.ul`
     right: 0;
     height: 100%;
     padding-top: 3.5rem;
-    z-index: 1;
+    z-index: 100;
     transition: transform 0.3s ease-in-out;
     li .option{
       color: white;
