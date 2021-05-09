@@ -37,11 +37,11 @@ function Card({title , children, CurrentUser}) {
 
     const confirmRegister =async()=>{
         try{
-            if(isRegister==false){
+            
                await createEventsCollection(title , CurrentUser);
                 setisRegister(true);
                 setBtnColor(true);
-            }
+            
         }
         catch(error){
             console.log(error.message)
@@ -56,7 +56,8 @@ function Card({title , children, CurrentUser}) {
             await auth.currentUser.reload(); 
             if(auth.currentUser.emailVerified && CurrentUser ) {
 
-                confirmAlert({
+                if(isRegister==false){
+                    confirmAlert({
                     title: 'Confirm to submit',
                     message: `Are you sure you want to register for ${title} ?`,
                     buttons: [
@@ -72,13 +73,10 @@ function Card({title , children, CurrentUser}) {
                       }
                     ]
                   });
-
-
-
-
-                
-                  
+                }    
             }
+
+            
             else if(auth.currentUser.emailVerified==false && CurrentUser) alert("Verify email first!");
         
         }
