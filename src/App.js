@@ -18,7 +18,7 @@ import SignIn from './pages/sign-in/sign-in.component'
 import SignUp from './pages/Sign-up/sign-up.component';
 import ForgotPassword from './components/forgot-password/forgot-password.component'
 import Navbar from './components/Navbar/Navbar'
-
+import Home from './components/home/home';
 
 class App extends React.Component {
 
@@ -70,6 +70,7 @@ componentWillUnmount(){
         <Switch>
           
           <Route exact path='/signin/forgot-password' component={ForgotPassword} />
+          <Route exact path='/' component={Home} />
          <Route exact path='/about-us' component={AboutUs} />
          <Route exact path='/events' component={Body} />
          <Route exact path='/signin' render={()=>
@@ -86,16 +87,9 @@ componentWillUnmount(){
        
        
       </div>
-   );
+    )
   }
 }
 
-const mapStateToProps = createStructuredSelector({
-  currentUser:selectCurrentUser
-})
+export default App;
 
-const mapDispatchToProps = dispatch =>({
-  setCurrentUser: user => dispatch(setCurrentUser(user)) //the rightmost setcurrentuser is the one which is imported from redux user actions.
-});
-
-export default connect(mapStateToProps , mapDispatchToProps) (App);
