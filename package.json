@@ -9,6 +9,7 @@
     "firebase": "^8.2.4",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
+    "react-confirm-alert": "^2.7.0",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
     "react-responsive-modal": "^6.0.1",
@@ -21,6 +22,8 @@
     "reselect": "^4.0.0",
     "scss": "^0.2.4",
     "styled-components": "^5.2.3",
+    "three": "^0.128.0",
+    "vanta": "^0.5.21",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

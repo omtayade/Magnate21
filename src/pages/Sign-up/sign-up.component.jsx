@@ -18,6 +18,7 @@ class SignUp extends React.Component{
      this.state={
          displayName:'',
          email:'',
+         phone:'',
          password:'',
          confirmPassword:'',
          
@@ -44,7 +45,7 @@ class SignUp extends React.Component{
         event.preventDefault();
         
        
-        const {displayName , email , password , confirmPassword} = this.state;
+        const {displayName , email ,phone ,  password , confirmPassword} = this.state;
 
         if(password != confirmPassword ) {
             alert("Passwords don't match , Re-enter password !")
@@ -53,11 +54,12 @@ class SignUp extends React.Component{
 
         try{
            const {user} = await auth.createUserWithEmailAndPassword(email ,password); 
-             await createUserProfile(user , {displayName});
+             await createUserProfile(user , {displayName , phone} );
             
             this.setState({
             displayName:'',
             email:'',
+            phone:'',
             password:'',
             confirmPassword:''
             });
@@ -81,15 +83,16 @@ class SignUp extends React.Component{
 
     render(){
        
-        const {displayName , email , password , confirmPassword } = this.state;
+        const {displayName , email ,phone ,  password , confirmPassword  } = this.state;
         return(
             <div className="box">
                 <div className='signup'>
-                    <h2  className='title' style={{color:"black"}}>I don't have an account</h2>
-                    <span style={{color:"black"}}>Sign up with your email amd password</span>
+                    <h2  className='title' style={{color:"black"}}>Don't have an account ?</h2>
+                    <span style={{color:"black"}}>Sign up with your email and password</span>
                     <form className='sign-up-form' onSubmit={this.handleSubmit} >
                         <FormInput type="text" name="displayName" label="Username" value={displayName} handleChange={this.handleChange} required /> 
                         <FormInput type="email" name="email" label="Email" value={email} handleChange={this.handleChange} required /> 
+                        <FormInput type="text" name="phone" label="Enter your mobile mumber" value={phone} handleChange={this.handleChange} required /> 
                         <FormInput type="password" name="password" label="Password" value={password} handleChange={this.handleChange} required /> 
                         <FormInput type="password" name="confirmPassword" label="Confirm Password" value={confirmPassword} handleChange={this.handleChange} required /> 
                         <CustomButton type='submit' onClick={() => this.setState({open:true})}>SIGN UP</CustomButton>

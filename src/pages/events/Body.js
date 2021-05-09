@@ -14,46 +14,46 @@ function Body() {
                 </div>
                 <div className="app__body__cards">
                     <div className="a">
-                    <Card title={<h3>Event</h3>} modalData={data} >
+                    <Card title="Event1" modalData={data} >
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>} modalData={data} >
+                    <Card title="Event2" modalData={data} >
                         {data}
                     </Card>
                     </div>
                     <div  className="b">
-                    <Card title={<h3>Event</h3>} modalData={data}>
+                    <Card title="Event3" modalData={data}>
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>} modalData={data}>
+                    <Card title="Event4" modalData={data}>
                         {data}
                     </Card>
                     </div>
                 </div>
                 <div className="app__body__cards">
                     <div className="a">
-                    <Card title={<h3>Event</h3>} modalData={data}>
+                    <Card title="Event5" modalData={data}>
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>} modalData={data}>
+                    <Card title="Event6" modalData={data}>
                         {data}
                     </Card>
                     </div>
                     <div  className="b">
-                    <Card title={<h3>Event</h3>} modalData={data}>
+                    <Card title="Event7" modalData={data}>
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>} modalData={data}>
+                    <Card title="Event8 " modalData={data}>
                         {data}
                     </Card>
                     </div>
                 </div>
                 <div className="app__body__cards">
                     <div className="a">
-                    <Card title={<h3>Event</h3>} modalData={data}>
+                    <Card title="Event9 " modalData={data}>
                         {data}
                     </Card>
-                    <Card title={<h3>Event</h3>} modalData={data}>
+                    <Card title="Event10" modalData={data}>
                         {data}
                     </Card>
                     </div> 

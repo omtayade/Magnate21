@@ -40,8 +40,10 @@ const Ul = styled.ul`
 
 
 
-const handleClick =() =>{
-   auth.signOut()
+const handleClick =async() =>{
+   await auth.signOut();
+   window.location.reload()
+  
   
 
 }

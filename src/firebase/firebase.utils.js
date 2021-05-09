@@ -19,9 +19,9 @@ export const createUserProfile = async (userAuth, additionalData) => {
   
   
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-  // const temp=firestore.collection('users');
+  
   const snapShot = await userRef.get();
-
+  // console.log(snapShot)
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -30,11 +30,12 @@ export const createUserProfile = async (userAuth, additionalData) => {
         displayName,
         email,
         createdAt,
+        
         ...additionalData
+
       });
-      // await temp.set({
-      //   ...additionalData
-      // })
+      
+     
     } catch (error) {
       console.log('error creating user', error.message);
     }
@@ -42,6 +43,45 @@ export const createUserProfile = async (userAuth, additionalData) => {
 
   return userRef;
 };
+
+
+
+export const createEventsCollection = async (title , CurrentUser) => {
+  const userAuth =firebase.auth().currentUser;
+ 
+  const {displayName , email , phone}=CurrentUser;
+  const registeredAt = new Date();
+
+  const eventRef = firestore.doc(`users/${firebase.auth().currentUser.uid}/events/${title}`)
+  const eventWiseCollectionRef = firestore.doc(`events/${title}/users/${userAuth.uid}`)
+ 
+  try{
+        await eventRef.set({
+          title
+        });
+        await eventWiseCollectionRef.set({
+        displayName,
+        email,
+        phone,
+        registeredAt
+        });
+        
+    
+  }
+  catch(error){
+      console.log(error.message)
+  }
+  
+  return eventRef;
+};
+
+// export const setEventWiseData = async(user) =>{
+//   const
+// }
+
+
+
+
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
