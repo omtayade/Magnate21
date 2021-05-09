@@ -2,8 +2,11 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 .Carousel {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 30vh;
+  padding-bottom: 30px;
+}
+.slider__holder {
+  height: 40vh;
 }
 .slide img {
   object-fit: scale-down;
