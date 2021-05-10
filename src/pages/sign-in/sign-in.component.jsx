@@ -1,10 +1,10 @@
 import React from "react";
-import { toast } from "react-toastify";
 import FormInput from "../../components/form-input/form-item.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 import "./sign-in.styles.scss";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -66,7 +66,6 @@ class SignIn extends React.Component {
               type="password"
               name="password"
               label="Password"
-              minLength="5"
               value={this.state.password}
               handleChange={this.handleChange}
               required

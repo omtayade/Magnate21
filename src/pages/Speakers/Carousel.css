@@ -8,6 +8,7 @@
 .slider__holder {
   height: 40vh;
 }
+
 .slide img {
   object-fit: scale-down;
   flex: 80%;

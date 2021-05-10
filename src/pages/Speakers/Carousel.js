@@ -44,7 +44,7 @@ function Carousel() {
     centerPadding: 0,
     autoplay: true,
     speed: 300,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current, next) => setImageIndex(next),
