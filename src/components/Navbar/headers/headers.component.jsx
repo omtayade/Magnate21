@@ -58,12 +58,7 @@ const RightHeader = ({open , currentUser   }) => (
       </li>
       <li>
         <Link  to='/about-us' className='option'>
-          About
-        </Link>
-      </li>
-      <li>
-        <Link  to='/theme' className='option'>
-          Theme
+          About Us
         </Link>
       </li>
       <li>
@@ -78,7 +73,7 @@ const RightHeader = ({open , currentUser   }) => (
       </li>
       <li>
         <Link  to='/team' className='option'>
-          Team
+          Developers
         </Link>
       </li>
       <li>
