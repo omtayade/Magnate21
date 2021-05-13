@@ -24,6 +24,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Footer from './components/Footer/footer'
 import Carousel from "./pages/Speakers/Carousel";
 import { ToastContainer } from "react-toastify";
+import Developers from "./pages/Developers/Developers";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -73,6 +74,8 @@ class App extends React.Component {
           <Route exact path="/about-us" component={AboutUs} />
           <Route exact path="/events" component={Body} />
           <Route exact path="/speakers" component={Carousel} />
+          <Route exact path="/developers" component={Developers} />
+
           <Route
             exact
             path="/signin"

@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(17, 17, 17);
+  margin: 0;
+}
+
+.first__child {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.second__child {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+  .first__child {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .second__child {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
