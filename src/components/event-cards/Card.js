@@ -17,7 +17,7 @@ import "firebase/auth";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { toast } from "react-toastify";
-
+import emailjs from 'emailjs-com'
 function Card({ title, children, CurrentUser }) {
   const [open, setOpen] = useState(false);
   const [detail, setDetail] = useState("description");
@@ -51,6 +51,19 @@ function Card({ title, children, CurrentUser }) {
   };
 
   fetchEvents();
+  
+  
+  function sendEmail(title) {
+    
+
+    emailjs.sendForm('gmail', 'template_kk7dkpd', title, 'user_tFK8rtrT8kBLvFV9RBwGB')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
+
 
   const confirmRegister = async () => {
     try {
@@ -66,6 +79,7 @@ function Card({ title, children, CurrentUser }) {
         draggable: true,
         progress: undefined,
       });
+      sendEmail(title);
     } catch (error) {
       console.log(error.message);
     }
