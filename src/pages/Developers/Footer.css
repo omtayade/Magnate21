@@ -1,0 +1,29 @@
+.footer__big {
+  display: flex;
+  justify-content: center;
+}
+.footer__small {
+  display: none;
+}
+.icon {
+  margin: 10px;
+  opacity: 1;
+}
+
+.icon:hover {
+  opacity: 0.5;
+}
+
+.icon__holder {
+  size: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+  .footer__small {
+    display: flex;
+    justify-content: center;
+  }
+  .footer__big {
+    display: none;
+  }
+}

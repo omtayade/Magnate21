@@ -23,6 +23,7 @@ import ForgotPassword from "./components/forgot-password/forgot-password.compone
 import Navbar from "./components/Navbar/Navbar";
 import Carousel from "./pages/Speakers/Carousel";
 import { ToastContainer } from "react-toastify";
+import Developers from "./pages/Developers/Developers";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
