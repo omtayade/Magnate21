@@ -35,7 +35,7 @@ const Home = (props) => {
             <div className="instagram">
               <a href="/" target="_blank">
                 <p className="social-inner">
-                  <i class="fab fa-instagram"></i>
+                  <i className="fab fa-instagram"></i>
                   Follow us @pictedc
                 </p>
               </a>
@@ -43,7 +43,7 @@ const Home = (props) => {
             <div className="linkedin">
               <a href="/" target="_blank">
                 <p className="social-inner">
-                  <i class="fab fa-linkedin-in"></i>
+                  <i className="fab fa-linkedin-in"></i>
                   Connect Pict EDC
                 </p>
               </a>
@@ -51,7 +51,7 @@ const Home = (props) => {
             <div className="youtube">
               <a href="/" target="_blank">
                 <p className="social-inner">
-                  <i class="fab fa-youtube"></i>
+                  <i className="fab fa-youtube"></i>
                   Subscribe Pict EDC
                 </p>
               </a>

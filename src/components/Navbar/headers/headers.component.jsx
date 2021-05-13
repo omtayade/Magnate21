@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
@@ -9,33 +9,36 @@ import { auth } from "../../../firebase/firebase.utils";
 
 import styled from "styled-components";
 
-// import './headers.styles.scss';
+import "./headers.component.css";
 
-const Ul = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-flow: row nowrap;
-  min-width: 70%;
-  margin: 0;
-  li {
-    padding: 18px 10px;
-  }
-  @media (max-width: 768px) {
-    flex-flow: column nowrap;
-    background-color: #e85d04;
-    position: fixed;
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-    top: 0;
-    right: 0;
-    height: 100%;
-    padding-top: 3.5rem;
-    z-index: 100;
-    transition: transform 0.3s ease-in-out;
-    li .option {
-      color: white;
-    }
-  }
-`;
+// const Ul = styled.ul`
+//   list-style: none;
+//   display: flex;
+//   flex-flow: row nowrap;
+//   min-width: 70%;
+//   margin: 0;
+//   li {
+//     padding: 18px 10px;
+//   }
+//   @media (max-width: 768px) {
+//     flex-flow: column nowrap;
+//     background-color: #e85d04;
+//     position: fixed;
+//     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+//     top: 0;
+//     right: 0;
+//     height: 100%;
+//     padding-top: 3.5rem;
+//     z-index: 100;
+//     transition: transform 0.3s ease-in-out;
+//     li .option {
+//       color: white;
+//     }
+//     li .active__option {
+//       color: red;
+//     }
+//   }
+// `;
 
 const handleClick = async () => {
   await auth.signOut();
@@ -43,54 +46,80 @@ const handleClick = async () => {
 };
 
 const RightHeader = ({ open, currentUser }) => (
-  <Ul open={open}>
+  <ul open={open}>
     <li>
-      <Link to="/" className="option">
+      <NavLink
+        to="/"
+        exact={true}
+        className="option"
+        activeClassName="active__option"
+      >
         Home
-      </Link>
+      </NavLink>
     </li>
     <li>
-      <Link to="/about-us" className="option">
+      <NavLink
+        to="/about-us"
+        className="option"
+        activeClassName="active__option"
+      >
         About
-      </Link>
+      </NavLink>
     </li>
     <li>
-      <Link to="/theme" className="option">
+      <NavLink to="/theme" className="option" activeClassName="active__option">
         Theme
-      </Link>
+      </NavLink>
     </li>
     <li>
-      <Link to="/speakers" className="option">
+      <NavLink
+        to="/speakers"
+        className="option"
+        activeClassName="active__option"
+      >
         Speakers
-      </Link>
+      </NavLink>
     </li>
     <li>
-      <Link to="/events" className="option">
+      <NavLink to="/events" className="option" activeClassName="active__option">
         Events
-      </Link>
+      </NavLink>
     </li>
     <li>
-      <Link to="/team" className="option">
+      <NavLink to="/team" className="option" activeClassName="active__option">
         Team
-      </Link>
+      </NavLink>
     </li>
     <li>
-      <Link to="/contact-us" className="option">
+      <NavLink
+        to="/contact-us"
+        className="option"
+        activeClassName="active__option"
+      >
         Contact Us
-      </Link>
+      </NavLink>
     </li>
     <li>
       {currentUser ? (
-        <Link className="option" to="/signin" onClick={handleClick}>
+        <NavLink
+          className="option"
+          to="/signin"
+          onClick={handleClick}
+          activeClassName="active__option"
+        >
           SIGN OUT
-        </Link>
+        </NavLink>
       ) : (
-        <Link className="option" to="/signup">
+        <NavLink
+          className="option"
+          to="/signup"
+          activeClassName="active__option"
+        >
           Login/Register
-        </Link>
+        </NavLink>
       )}
     </li>
-  </Ul>
+  </ul>
 );
 
 const mapStateToProps = createStructuredSelector({

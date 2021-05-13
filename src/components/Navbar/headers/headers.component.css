@@ -1,0 +1,31 @@
+ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  min-width: 70%;
+  margin: 0;
+}
+li {
+  padding: 18px 10px;
+  padding-bottom: 0px;
+}
+.active__option {
+  border-bottom: 5px solid black;
+}
+.option:hover {
+  border-bottom: 5px solid black;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+@media (max-width: 768px) {
+  ul {
+    flex-flow: column nowrap;
+    background-color: #e85d04;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding-top: 3.5rem;
+    z-index: 100;
+  }
+}
