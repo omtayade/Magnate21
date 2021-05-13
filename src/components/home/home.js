@@ -3,7 +3,7 @@ import "./home.css";
 import bg from "./bg.mp4";
 import DOTS from "./vanta.dots.min.js";
 import linkedin from '../../assets/linkedin.svg';
-
+import {Link} from 'react-router-dom'
 const Home = (props) => {
 
 
@@ -63,9 +63,10 @@ const Home = (props) => {
             <p>MAGNATE'21</p>
             <p>EVOLUTION OF ENTREPRENEURSHIP</p>
             <div className="register-btn">
-              <a href="#" className="register-link">
+              <Link to='/events' className='register-link'>
                 REGISTER
-              </a>
+              </Link>
+              
             </div>
           </div>
         </div>
