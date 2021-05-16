@@ -1,29 +1,14 @@
-import React from 'react';
-import styled from 'styled-components';
-import Burger from './Burger/burger';
-
-const Nav = styled.nav`
-  width: 100%;
-  height: 55px;
-  position : absolute;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  .logo {
-    padding: 15px 0;
-  }
-  z-index : 99;
-`
+import React from "react";
+import "./Navbar.css";
+import Burger from "./Burger/burger";
 
 const Navbar = () => {
   return (
-    <Nav>
-      <div className="logo">
-        Magnate21
-      </div>
+    <div className="navbar">
+      <div className="logo">Magnate21</div>
       <Burger />
-    </Nav>
-  )
-}
+    </div>
+  );
+};
 
-export default Navbar
+export default Navbar;
