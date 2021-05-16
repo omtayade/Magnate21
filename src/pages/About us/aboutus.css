@@ -1,0 +1,72 @@
+.aboutus{
+    display: flex;
+    flex-flow: column;
+    padding: 0 30px;
+    background-color: rgb(34,34,34);
+    color: white;
+}
+
+.magnate-theme{
+    margin-top: 60px;
+}
+
+.magnate-theme h1{
+    text-align: center;
+    font-size: 50px;
+    color: orangered;
+}
+
+.magnate-theme p{
+    text-align: center;
+    font-size: 40px;
+}
+
+.about-magnate{
+    display: flex;
+    flex-flow: column;
+}
+
+.about-magnate-container{
+    display: flex;
+}
+
+.about-magnate-content{
+    width: 60%;
+    font-size: 30px;
+}
+
+.about-edc{
+    display: flex;
+    flex-flow: column;
+}
+
+.about-edc-container{
+    display: flex;
+}
+
+.about-edc-content{
+    width: 60%;
+    font-size: 30px;
+    padding-left: 30px;
+}
+
+.about-edc-svg{
+    width: 40%;
+    border-radius: 10px;
+}
+
+.about-magnate-svg{
+    width: 40%;
+    border-radius: 10px;
+}
+
+.about-edc h1{
+    text-align: right;
+    font-size: 50px;
+    color: orangered;
+}
+
+.about-magnate h1{
+    font-size: 50px;
+    color: orangered;
+}

@@ -57,7 +57,6 @@ function Card({ title, children, modalData }) {
             modal: "customModal",
           }}
           center
-          closeIcon={close}
         >
             <div className="event-details">
                 <h1 className="event-heading">STARTUP EXPO</h1>
