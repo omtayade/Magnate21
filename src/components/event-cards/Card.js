@@ -1,13 +1,26 @@
-import React, { useState } from "react";
-import { AppModal } from "../modal/AppModal";
-import "./Card.css";
+import React, { useState} from 'react'
+import './Card.css'
+
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import close from '../../assets/close (2).svg';
 
-function Card({ title, children, modalData }) {
+import {connect} from 'react-redux'
+import {createStructuredSelector} from 'reselect'
+import {auth , firestore } from '../../firebase/firebase.utils'
+import {selectCurrentUser} from '../../redux/user/user.selectors'
+import { Redirect } from 'react-router';
+ import {createEventsCollection} from '../../firebase/firebase.utils'
+ import firebase from 'firebase/app';
+ import 'firebase/firestore';
+ import 'firebase/auth';
+import { confirmAlert } from 'react-confirm-alert'; 
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
+function Card({title , children, CurrentUser}) {
 
 
+    const [open, setOpen] = useState(false);
     const [detail,setDetail] = useState('description'); 
 
     const changeDetail = (detail) =>{
@@ -21,35 +34,103 @@ function Card({ title, children, modalData }) {
         "1. The Jury can ask frequent questions anytime in between. And the participants need to respond in a very short and precise manner.\n 2. Contestant’s need to elaborate each point within a 5-minute time span.\n 3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.3. The decision of the judges will be final and shall be respected.",
         "Companies investing in startups, R&D’s, Investors, Startup building organizations, Incubation centers"
     ];
-  const [open, setOpen] = useState(false);
+    const [isRegister, setisRegister] = useState(false);
+    const [BtnColor , setBtnColor] = useState(false);
+    
+    const fetchEvents =async() =>{
+        if (auth.currentUser){
+            const eventRef = firestore.doc(`users/${auth.currentUser.uid}/events/${title}`)
+            const snapShot = await eventRef.get();
+            if(snapShot.exists){
+                setisRegister(true);
+                setBtnColor(true);
+            }
+        }
+        return 1;
+    }
+    
+     fetchEvents();
 
-  const [isRegister, setisRegister] = useState(false);
+    const confirmRegister =async()=>{
+        try{
+            
+               await createEventsCollection(title , CurrentUser);
+                setisRegister(true);
+                setBtnColor(true);
+            
+        }
+        catch(error){
+            console.log(error.message)
+        }
+
+    }
+
+    const handleClick=async()=>{
+       
+
+        if(CurrentUser){
+            await auth.currentUser.reload(); 
+            if(auth.currentUser.emailVerified && CurrentUser ) {
+
+                if(isRegister==false){
+                    confirmAlert({
+                    title: 'Confirm to submit',
+                    message: `Are you sure you want to register for ${title} ?`,
+                    buttons: [
+                      {
+                        label: 'Yes',
+                        onClick: () =>{
+                            confirmRegister();
+                        }
+                      },
+                      {
+                        label: 'No',
+                        onClick: () => {}
+                      }
+                    ]
+                  });
+                }    
+            }
 
 
+            else if(auth.currentUser.emailVerified==false && CurrentUser) alert("Verify email first!");
+        
+        }
+        else {
+            alert("Login first");
+           
+        }
 
-  return (
-    <div className="card">
-      <div className="card__heading">{title}</div>
-      <div className="card__content">
-        <p>{children}</p>
-      </div>
+    }
 
-      <div className="card__footer">
-        <div className="card__btn__holder">
-          <div className="card__btn" onClick={() => setisRegister(!isRegister)}>
-            {isRegister ? "Registered" : "Register"}
-          </div>
-        </div>
 
-        <div className="card__btn__holder">
-          <div className="card__btn" onClick={() => setOpen(true)}>
-            Details
-          </div>
-        </div>
-      </div>
+    return (
+        <div className="card">
+            <div className="card__heading">
+                {title}
+            </div>
+            <div className="card__content">
+                <p>
+                    {children}               
+                </p>
+            </div>
 
-      <div>
-        <Modal
+            <div className="card__footer">
+                <div className="card__btn__holder">
+                    <div className="card__btn" style={ BtnColor?{backgroundColor:"rgb(255, 102, 0)" , color: "black"}:null} onClick={handleClick}>
+                        {isRegister ? "Registered" : "Register"}
+                    </div>
+                </div>
+
+                <div className="card__btn__holder">
+                    <div className="card__btn" onClick={() => setOpen(true)}>
+                        Details
+                    </div>
+                </div>
+            </div>
+
+            <div>
+            <Modal
           open={open}
           onClose={() => setOpen(false)}
           classNames={{
@@ -78,9 +159,13 @@ function Card({ title, children, modalData }) {
                 </div>
             </div>
         </Modal>
-      </div>
-    </div>
-  );
+            </div>
+        </div>
+    );
 }
 
-export default Card;
+const mapStateToProps = createStructuredSelector({
+    // currentUser: state.user.currentUser  //Equal as=> currentUser:rootReducer.userReducer.currentUser
+    CurrentUser:selectCurrentUser
+});
+export default connect(mapStateToProps) (Card);
