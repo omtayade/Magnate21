@@ -70,3 +70,26 @@
     font-size: 50px;
     color: orangered;
 }
+
+@media (max-width : 900px){
+    .about-edc-svg{
+        display: none;
+    }
+    .about-magnate-svg{
+        display: none;
+    }
+    .about-edc-content{
+        width: 100%;
+        text-align: center;
+    }
+    .about-magnate-content{
+        width: 100%;
+        text-align: center;
+    }
+    .about-magnate h1{
+        text-align: center;
+    }
+    .about-edc h1{
+        text-align: center;
+    }
+}
