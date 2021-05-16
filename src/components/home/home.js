@@ -2,11 +2,12 @@ import { useEffect, useState, useRef } from "react";
 import "./home.css";
 import bg from "./bg.mp4";
 import DOTS from "./vanta.dots.min.js";
+
+
 import linkedin from '../../assets/linkedin.svg';
+import {Link} from 'react-router-dom'
 
 const Home = (props) => {
-
-
   const [vantaEffect, setVantaEffect] = useState(0);
   const myRef = useRef(null);
   useEffect(() => {
@@ -33,39 +34,40 @@ const Home = (props) => {
     <div style={{ height: "100vh", width: "100vw" }} ref={myRef}>
       <div className="home">
         <div className="logo-main">
-            <div className="side-social">
-                <div className="instagram">
-                    <a href="/" target="_blank">
-                        <p className="social-inner">
-                        <i class="fab fa-instagram"></i>
-                            Follow us @pictedc
-                        </p>
-                    </a>
-                </div>
-                <div className="linkedin">
-                    <a href="/" target="_blank">
-                        <p className="social-inner">
-                        <i class="fab fa-linkedin-in"></i>
-                            Connect Pict EDC
-                        </p>
-                    </a>
-                </div>
-                <div className="youtube">
-                    <a href="/" target="_blank">
-                        <p className="social-inner">
-                        <i class="fab fa-youtube"></i>
-                            Subscribe Pict EDC
-                        </p>
-                    </a>
-                </div>
+          <div className="side-social">
+            <div className="instagram">
+              <a href="/" target="_blank">
+                <p className="social-inner">
+                  <i className="fab fa-instagram"></i>
+                  Follow us @pictedc
+                </p>
+              </a>
             </div>
+            <div className="linkedin">
+              <a href="/" target="_blank">
+                <p className="social-inner">
+                  <i className="fab fa-linkedin-in"></i>
+                  Connect Pict EDC
+                </p>
+              </a>
+            </div>
+            <div className="youtube">
+              <a href="/" target="_blank">
+                <p className="social-inner">
+                  <i className="fab fa-youtube"></i>
+                  Subscribe Pict EDC
+                </p>
+              </a>
+            </div>
+          </div>
           <div className="magnate-name">
             <p>MAGNATE'21</p>
             <p>EVOLUTION OF ENTREPRENEURSHIP</p>
             <div className="register-btn">
-              <a href="#" className="register-link">
+              <Link to='/events' className='register-link'>
                 REGISTER
-              </a>
+              </Link>
+              
             </div>
           </div>
         </div>

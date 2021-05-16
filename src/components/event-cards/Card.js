@@ -126,7 +126,7 @@ function Card({ title, children, CurrentUser }) {
       </div>
 
       <div className="card__footer">
-        <div className="card_btn_holder">
+        <div className="card__btn__holder">
           <div
             className="card__btn"
             style={
@@ -140,7 +140,7 @@ function Card({ title, children, CurrentUser }) {
           </div>
         </div>
 
-        <div className="card_btn_holder">
+        <div className="card__btn__holder">
           <div className="card__btn" onClick={() => setOpen(true)}>
             Details
           </div>

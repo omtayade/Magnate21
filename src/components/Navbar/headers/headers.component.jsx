@@ -1,100 +1,96 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import {connect} from 'react-redux'
-import {createStructuredSelector} from 'reselect'
+import React from "react";
+import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
-import {selectCurrentUser} from '../../../redux/user/user.selectors'
+import { selectCurrentUser } from "../../../redux/user/user.selectors";
 
-import { auth } from '../../../firebase/firebase.utils';
+import { auth } from "../../../firebase/firebase.utils";
 
-import styled from 'styled-components'
+import styled from "styled-components";
 
-// import './headers.styles.scss';
-
+import "./headers.component.css";
 
 const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
-  min-width:70%;
-  margin:0;
+  min-width: 70%;
+  margin: 0;
   li {
     padding: 18px 10px;
   }
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #0D2538;
+    background-color: #e85d04;
     position: fixed;
-    transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
+    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
     top: 0;
     right: 0;
     height: 100%;
     padding-top: 3.5rem;
-    z-index: 1;
+    z-index: 100;
     transition: transform 0.3s ease-in-out;
-    li .option{
+    li .option {
       color: white;
     }
   }
 `;
 
+const handleClick = async () => {
+  await auth.signOut();
+  window.location.reload();
+};
 
-
-const handleClick =async() =>{
-   await auth.signOut();
-   window.location.reload()
-  
-  
-
-}
-
-const RightHeader = ({open , currentUser   }) => (
+const RightHeader = ({ open, currentUser }) => (
   <Ul open={open}>
     
-      <li >
-        <Link  to='/' className='option'>
-          Home
-        </Link>
-      </li>
+    <li>
+      <NavLink
+        to="/"
+        exact={true}
+        className="option"
+        activeClassName="active__option"
+      >
+        Home
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/about-us"
+        className="option"
+        activeClassName="active__option"
+      >
+        About Us
+      </NavLink>
+    </li>
+
       <li>
-        <Link  to='/about-us' className='option'>
-          About
-        </Link>
-      </li>
-      <li>
-        <Link  to='/theme' className='option'>
-          Theme
-        </Link>
-      </li>
-      <li>
-        <Link  to='/speakers' className='option'>
-          Speakers
-        </Link>
-      </li>
-      <li>
-        <Link  to='/events' className='option' >
+        <NavLink  to='/events' className='option' activeClassName="active__option">
           Events
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link  to='/team' className='option'>
-          Team
-        </Link>
+        <NavLink  to='/developers' className='option' activeClassName="active__option">
+          Developers
+        </NavLink>
       </li>
       <li>
-        <Link  to='/contact-us' className='option' >
+        <NavLink  to='/contact-us' className='option' activeClassName="active__option" >
           Contact Us
-        </Link>
+        </NavLink>
       </li>
       <li>
         {currentUser ? (
-          <Link className='option' to='/signin' onClick={handleClick} >
+          <NavLink className='option' to='/signin' activeClassName="active__option" onClick={handleClick} >
             SIGN OUT
-          </Link>
+          </NavLink>
         ) : (
-          <Link className='option' to='/signup' >
+          <NavLink className='option' activeClassName="active__option" to='/signup' >
             Login/Register
-          </Link>
+          </NavLink>
         )}
 
       </li>
@@ -102,15 +98,11 @@ const RightHeader = ({open , currentUser   }) => (
       
      
   </Ul>
-   
-  
 );
-
 
 const mapStateToProps = createStructuredSelector({
   // currentUser: state.user.currentUser  //Equal as=> currentUser:rootReducer.userReducer.currentUser
-  currentUser:selectCurrentUser
- 
+  currentUser: selectCurrentUser,
 });
 
-export default connect(mapStateToProps) (RightHeader);
+export default connect(mapStateToProps)(RightHeader);
