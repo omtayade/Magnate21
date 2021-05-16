@@ -1,0 +1,28 @@
+.footer{
+    background-color: #0f1215;
+    margin: 0px auto;
+    padding: 20px 0px 20px 0px;
+}
+
+.button-top{
+    display: flex;
+    justify-content: center;
+}
+
+a i{
+    color:#ffffff;
+    padding: 1em;
+}
+a i:hover{
+    color:#f09103;
+}
+img{
+    border-radius: 1em;
+}
+.quicklinks a{
+    color: white;
+    text-decoration: none;
+}
+.quicklinks a:hover{
+    color: #f09103;
+}

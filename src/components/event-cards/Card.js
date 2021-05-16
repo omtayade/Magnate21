@@ -3,21 +3,18 @@ import "./Card.css";
 
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
-import close from "../../assets/close (2).svg";
+// import close from "../../assets/closeIcon.svg";
 
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { auth, firestore } from "../../firebase/firebase.utils";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
-import { Redirect } from "react-router";
 import { createEventsCollection } from "../../firebase/firebase.utils";
-import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { toast } from "react-toastify";
-import emailjs from 'emailjs-com'
 function Card({ title, children, CurrentUser }) {
   const [open, setOpen] = useState(false);
   const [detail, setDetail] = useState("description");
@@ -53,16 +50,7 @@ function Card({ title, children, CurrentUser }) {
   fetchEvents();
   
   
-  function sendEmail(title) {
-    
-
-    emailjs.sendForm('gmail', 'template_kk7dkpd', title, 'user_tFK8rtrT8kBLvFV9RBwGB')
-      .then((result) => {
-          console.log(result.text);
-      }, (error) => {
-          console.log(error.text);
-      });
-  }
+  
 
 
   const confirmRegister = async () => {
@@ -79,7 +67,7 @@ function Card({ title, children, CurrentUser }) {
         draggable: true,
         progress: undefined,
       });
-      sendEmail(title);
+      
     } catch (error) {
       console.log(error.message);
     }
@@ -168,7 +156,7 @@ function Card({ title, children, CurrentUser }) {
             modal: "customModal",
           }}
           center
-          closeIcon={close}
+          // closeIcon={close}
         >
           <div className="event-details">
             <h1 className="event-heading">STARTUP EXPO</h1>

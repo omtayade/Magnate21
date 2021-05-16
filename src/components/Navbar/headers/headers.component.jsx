@@ -11,34 +11,7 @@ import styled from "styled-components";
 
 import "./headers.component.css";
 
-// const Ul = styled.ul`
-//   list-style: none;
-//   display: flex;
-//   flex-flow: row nowrap;
-//   min-width: 70%;
-//   margin: 0;
-//   li {
-//     padding: 18px 10px;
-//   }
-//   @media (max-width: 768px) {
-//     flex-flow: column nowrap;
-//     background-color: #e85d04;
-//     position: fixed;
-//     transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-//     top: 0;
-//     right: 0;
-//     height: 100%;
-//     padding-top: 3.5rem;
-//     z-index: 100;
-//     transition: transform 0.3s ease-in-out;
-//     li .option {
-//       color: white;
-//     }
-//     li .active__option {
-//       color: red;
-//     }
-//   }
-// `;
+
 
 const handleClick = async () => {
   await auth.signOut();
@@ -46,6 +19,7 @@ const handleClick = async () => {
 };
 
 const RightHeader = ({ open, currentUser }) => (
+
   <ul open={open}>
     <li>
       <NavLink
@@ -120,6 +94,7 @@ const RightHeader = ({ open, currentUser }) => (
       )}
     </li>
   </ul>
+
 );
 
 const mapStateToProps = createStructuredSelector({

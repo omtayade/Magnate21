@@ -21,6 +21,7 @@ import SignIn from "./pages/sign-in/sign-in.component";
 import SignUp from "./pages/Sign-up/sign-up.component";
 import ForgotPassword from "./components/forgot-password/forgot-password.component";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from './components/Footer/footer'
 import Carousel from "./pages/Speakers/Carousel";
 import { ToastContainer } from "react-toastify";
 import Developers from "./pages/Developers/Developers";
@@ -73,6 +74,8 @@ class App extends React.Component {
           <Route exact path="/about-us" component={AboutUs} />
           <Route exact path="/events" component={Body} />
           <Route exact path="/speakers" component={Carousel} />
+          <Route exact path="/developers" component={Developers} />
+
           <Route
             exact
             path="/signin"
@@ -88,6 +91,7 @@ class App extends React.Component {
             }
           />
         </Switch>
+        {/* <Footer /> */}
       </div>
     );
   }

@@ -13,9 +13,9 @@ export default function Developers() {
         <DevCard
           picture={OmDP}
           name={"Om Tayade"}
-          linkedIn={"https://www.linkedin.com/in/mayur-jain-904982191"}
-          github={"https://github.com/maxcharge"}
-          mail={"https://maxcharge788769@gmail.com"}
+          linkedIn={"https://www.linkedin.com/in/om-tayade-6654921a9"}
+          github={"https://github.com/omtayade"}
+          mail={"https://omtayade160901@gmail.com"}
         />
         <DevCard
           picture={MayurDP}

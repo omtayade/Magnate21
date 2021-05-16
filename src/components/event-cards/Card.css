@@ -188,3 +188,7 @@
     float: inline-start;
   }
 }
+.react-responsive-modal-closeButton{
+  border-radius: 100%;
+  background: orangered !important;
+}
