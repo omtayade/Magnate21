@@ -1,4 +1,6 @@
 .footer{
+    width: 100%;
+    width: 100vw;
     background-color: #0f1215;
     margin: 0px auto;
     padding: 20px 0px 20px 0px;
@@ -7,22 +9,82 @@
 .button-top{
     display: flex;
     justify-content: center;
-}
-
-a i{
-    color:#ffffff;
     padding: 1em;
 }
-a i:hover{
-    color:#f09103;
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
 }
-img{
-    border-radius: 1em;
+.social-icons i {
+    margin-right:1em;
+    color: white;
+    font-size: 1.5em;
+}
+
+.footer-content{
+    display: flex;
+    padding-bottom :1em;
+}
+.quicklinks{
+    margin-left: 13%;
+    padding: 1em;
+    text-align:center;
 }
 .quicklinks a{
-    color: white;
-    text-decoration: none;
+    color:#ffffff;
 }
 .quicklinks a:hover{
+    text-decoration: none;
+    color:#f09103;
+}
+.address{
+    margin-left: 13%;
+    padding: 1em;
+    text-align:center;
+}
+.address i{
     color: #f09103;
+    font-size: 2em;
+}
+.contact{
+    margin-left: 15%;
+    padding: 1em;
+    text-align:center;
+
+}
+.contact i{
+    color: #f09103;
+}
+.contact a:hover{
+    text-decoration: none;
+    color:white;
+    font-size: medium;
+}
+.end{
+    text-align: center;
+}
+.copyright{
+    color: white;
+}
+h5{
+    color:rgb(224, 243, 248);
+}
+
+@media screen and (max-width: 700px) {
+    .footer-content{
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+    .quicklinks{
+        margin-left: 1%;
+    }
+    .contact{
+        margin-left: 1%;
+    }
+    .address{
+        margin-left: 1%;
+    }
 }

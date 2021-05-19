@@ -10,16 +10,21 @@ li {
   padding-bottom: 0px;
 }
 .active__option {
-  box-shadow: 0 0 16px 0 black;
+  border-bottom: 4px solid orangered;
 
 }
+
+.option{
+  font-size: 1.4em;
+}
+
 .option:hover {
-  box-shadow: 0 0 16px 0 black;
+  border-bottom: 4px solid orangered;
   cursor: pointer;
   transition-duration: 200ms;
 }
 @media (max-width: 768px) {
-  ul {
+  .navbar ul {
     flex-flow: column nowrap;
     background-color: #e85d04;
     position: fixed;
@@ -28,5 +33,13 @@ li {
     height: 100%;
     padding-top: 3.5rem;
     z-index: 100;
+  }
+
+  .option:hover{
+    border-bottom: black 4px solid;
+  }
+
+  .active__option{
+    border-bottom: black 4px solid;
   }
 }

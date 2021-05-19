@@ -1,10 +1,17 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './aboutus.css';
 import img1 from '../../assets/img1.gif';
-import {Redirect} from 'react-router-dom'
+import Footer from '../../components/Footer/footer';
+import  'aos/dist/aos.css';
+import AOS from 'aos';
+
 const AboutUs = () =>{
     
-
+    useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+      }, []);
     return(
        
 
@@ -14,7 +21,7 @@ const AboutUs = () =>{
             <p>EVOLUTION of ENTREPRENEURSHIP</p>
         </div>
         <div className="about-magnate">
-            <h1>ABOUT MAGNATE'21</h1>
+            <h1 data-aos={"fade-up"}>ABOUT MAGNATE'21</h1>
             <div className="about-magnate-container">
                 <div className="about-magnate-content">
                     The event is especially well recognized for the variety of panel discussions, competitive events,
@@ -25,25 +32,26 @@ const AboutUs = () =>{
                     aspirations and experiences and get the right direction for their endeavors.
                 </div>
                 <div className="about-magnate-svg">
-                    <img src={img1} style={{width:'100%',height:"100%",borderRadius:"10px"}}></img>
+                    <img src={img1} style={{width:'90%',height:"90%",borderRadius:"10px"}}></img>
+                </div>
+            </div>
+            <div className="about-edc">
+                <h1>ABOUT EDC</h1>
+                <div className="about-edc-container">
+                    <div className="about-edc-svg">
+                        <img src={img1} style={{width:'90%',height:"90%",borderRadius:"10px"}}></img>
+                    </div>
+                    <div className="about-edc-content">
+                        Entrepreneurship Development Cell, PICT firmly believes that India needs the drive and innovation of the young entrepreneurs.
+                        EDC therefore aims at manifesting the latent Entrepreneurial spirit of the youth.
+                        EDC was established by the college students, alumni, industry, and faculty,
+                        towards the cause of producing quality leaders who contribute to the growth and development of mankind.
+                        EDC was inaugurated on 4th march , 2009.
+                    </div>
                 </div>
             </div>
         </div>
-        <div className="about-edc">
-            <h1>ABOUT EDC</h1>
-            <div className="about-edc-container">
-                <div className="about-edc-svg">
-                    <img src={img1} style={{width:'100%',height:"100%",borderRadius:"10px"}}></img>
-                </div>
-                <div className="about-edc-content">
-                    Entrepreneurship Development Cell, PICT firmly believes that India needs the drive and innovation of the young entrepreneurs.
-                    EDC therefore aims at manifesting the latent Entrepreneurial spirit of the youth. 
-                    EDC was established by the college students, alumni, industry, and faculty, 
-                    towards the cause of producing quality leaders who contribute to the growth and development of mankind. 
-                    EDC was inaugurated on 4th march , 2009.
-                </div>
-            </div>
-        </div>
+        <Footer />
     </div>
   
 
