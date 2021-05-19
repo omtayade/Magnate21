@@ -1,4 +1,6 @@
 .footer{
+    width: 100%;
+    width: 100vw;
     background-color: #0f1215;
     margin: 0px auto;
     padding: 20px 0px 20px 0px;
@@ -9,20 +11,98 @@
     justify-content: center;
 }
 
-a i{
-    color:#ffffff;
-    padding: 1em;
-}
-a i:hover{
-    color:#f09103;
-}
-img{
-    border-radius: 1em;
-}
 .quicklinks a{
     color: white;
     text-decoration: none;
 }
 .quicklinks a:hover{
     color: #f09103;
+}
+
+.social-icons{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+.social-icons i {
+    margin:2em;
+    color: white;
+}
+.footer-content{
+    display: flex;
+    padding-bottom :1em;
+}
+.quick-links{
+    margin-left: 18%;
+    margin-top: 2%;
+    text-align: center;
+}
+.quick-links a{
+    color:#ffffff;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    display: flex;
+}
+.quick-links a:hover{
+    text-decoration: none;
+    color:#f09103;
+}
+.logos{
+    margin-left: 20%;
+}
+.logos img{
+    border-radius: 1em;
+}
+.contact{
+    margin-left: 19%;
+    margin-top: 2%;
+}
+.contact i{
+    color: white;
+}
+.contact a{
+    color: #f09103;
+    font-size: x-large;
+}
+.contact a:hover{
+    text-decoration: none;
+    color:white;
+}
+.end{
+    text-align: center;
+}
+@media (min-width:701) and (max-width: 1050px){
+    .quick-links{
+        margin-left: 2%;
+    }
+    .logos{
+        margin-left: 2%;
+    }
+    .contact{
+        margin-left: 2%;
+    }
+    .contact a{
+        font-size: medium;
+    }
+}
+@media screen and (max-width: 700px) {
+    .quick-links{
+        margin-left: 1%;
+    }
+    .logos{
+        margin-left: 0.5%;
+    }
+    .contact{
+        margin-left: 1%;
+    }
+    .contact a{
+        font-size: small;
+    }
+    .social-icons i {
+        margin:1em;
+    }
+    .footer-content{
+        flex-flow: column;
+        align-items: center;
+    }
 }
