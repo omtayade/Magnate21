@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import "./home.css";
 import bg from "./bg.mp4";
 import DOTS from "./vanta.dots.min.js";
-import PerfectScrollbar from 'react-perfect-scrollbar';
 import {Redirect} from 'react-router-dom'
 
 import linkedin from '../../assets/linkedin.svg';
@@ -12,9 +11,7 @@ const Home = (props) => {
   const [vantaEffect, setVantaEffect] = useState(0);
   const myRef = useRef(null);
 
-  const handleScroll = () => {
-    <Redirect to="/about-us" />
-  }
+  
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -37,7 +34,6 @@ const Home = (props) => {
   }, [vantaEffect]);
 
   return (
-    <PerfectScrollbar onScrollY={handleScroll}> 
       <div style={{ height: "100vh", width: "100vw" }} ref={myRef}>
       <div className="home">
         <div className="logo-main">
@@ -80,7 +76,6 @@ const Home = (props) => {
         </div>
       </div>
     </div>
-    </PerfectScrollbar>
     
   );
 };

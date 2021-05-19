@@ -4,8 +4,7 @@ import CustomButton from "../custom-button/custom-button.component";
 import firebase from "firebase/app";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-// import 'firebase/firestore';
-// import 'firebase/auth';
+
 
 class ForgotPassword extends React.Component {
   constructor() {
