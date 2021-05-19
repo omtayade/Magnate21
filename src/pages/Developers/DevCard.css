@@ -8,6 +8,11 @@
   padding-right: 25px;
   padding-left: 25px;
   border-radius: 20px;
+
+}
+.card__container:hover{
+  box-shadow: 0 0 16px 0 #e85d04;
+
 }
 
 .name__holder {
