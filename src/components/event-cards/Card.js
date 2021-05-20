@@ -48,10 +48,6 @@ function Card({ title, children, CurrentUser }) {
   };
 
   fetchEvents();
-  
-  
-  
-
 
   const confirmRegister = async () => {
     try {
@@ -67,7 +63,6 @@ function Card({ title, children, CurrentUser }) {
         draggable: true,
         progress: undefined,
       });
-      
     } catch (error) {
       console.log(error.message);
     }
@@ -159,7 +154,7 @@ function Card({ title, children, CurrentUser }) {
           // closeIcon={close}
         >
           <div className="event-details">
-            <h1 className="event-heading">STARTUP EXPO</h1>
+            <div className="event-heading">STARTUP EXPO</div>
             <div className="draft">
               <div className="options">
                 <div onClick={() => changeDetail("description")}>
