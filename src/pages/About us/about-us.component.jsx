@@ -17,13 +17,13 @@ const AboutUs = () =>{
 
     <div className="aboutus">
         <div className="magnate-theme">
-            <h1>THEME</h1>
-            <p>EVOLUTION of ENTREPRENEURSHIP</p>
+            <h1 data-aos={"fade-up"}>THEME</h1>
+            <p data-aos={"fade-up"}>EVOLUTION of ENTREPRENEURSHIP</p>
         </div>
         <div className="about-magnate">
             <h1 data-aos={"fade-up"}>ABOUT MAGNATE'21</h1>
             <div className="about-magnate-container">
-                <div className="about-magnate-content">
+                <div className="about-magnate-content" data-aos={"fade-up"}>
                     The event is especially well recognized for the variety of panel discussions, competitive events,
                     entrepreneurial opportunities, and the prominent and thought evoking speaker sessions that we
                     host. MAGNATE’21 has a plethora of opportunities for all the entrepreneurship, start-ups,
@@ -31,17 +31,17 @@ const AboutUs = () =>{
                     diverse backgrounds an opportunity to come together, compete, and share their entrepreneurial
                     aspirations and experiences and get the right direction for their endeavors.
                 </div>
-                <div className="about-magnate-svg">
+                <div className="about-magnate-svg" data-aos={"fade-up"}>
                     <img src={img1} style={{width:'90%',height:"90%",borderRadius:"10px"}}></img>
                 </div>
             </div>
             <div className="about-edc">
-                <h1>ABOUT EDC</h1>
+                <h1 data-aos={"fade-up"}>ABOUT EDC</h1>
                 <div className="about-edc-container">
-                    <div className="about-edc-svg">
+                    <div className="about-edc-svg" data-aos={"fade-up"}>
                         <img src={img1} style={{width:'90%',height:"90%",borderRadius:"10px"}}></img>
                     </div>
-                    <div className="about-edc-content">
+                    <div className="about-edc-content" data-aos={"fade-up"}>
                         Entrepreneurship Development Cell, PICT firmly believes that India needs the drive and innovation of the young entrepreneurs.
                         EDC therefore aims at manifesting the latent Entrepreneurial spirit of the youth.
                         EDC was established by the college students, alumni, industry, and faculty,
