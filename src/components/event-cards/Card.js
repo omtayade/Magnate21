@@ -48,9 +48,8 @@ function Card({ title, children, CurrentUser }) {
   };
 
   fetchEvents();
-  
+
   // function sendEmail(title) {
-    
 
   //   emailjs.sendForm('service_mwlfloi', 'template_kk7dkpd', ".card", 'user_tFK8rtrT8kBLvFV9RBwGB')
   //     .then((result) => {
@@ -59,9 +58,6 @@ function Card({ title, children, CurrentUser }) {
   //         console.log(error.text);
   //     });
   // }
-  
-  
-
 
   const confirmRegister = async () => {
     try {
@@ -169,7 +165,7 @@ function Card({ title, children, CurrentUser }) {
           // closeIcon={close}
         >
           <div className="event-details">
-            <h1 className="event-heading">STARTUP EXPO</h1>
+            <div className="event-heading">STARTUP EXPO</div>
             <div className="draft">
               <div className="options">
                 <div onClick={() => changeDetail("description")}>

@@ -2,16 +2,14 @@ import { useEffect, useState, useRef } from "react";
 import "./home.css";
 import bg from "./bg.mp4";
 import DOTS from "./vanta.dots.min.js";
-import {Redirect} from 'react-router-dom'
+import { Redirect } from "react-router-dom";
 
-import linkedin from '../../assets/linkedin.svg';
-import {Link} from 'react-router-dom'
+import linkedin from "../../assets/linkedin.svg";
+import { Link } from "react-router-dom";
 
 const Home = (props) => {
   const [vantaEffect, setVantaEffect] = useState(0);
   const myRef = useRef(null);
-
-  
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -34,7 +32,7 @@ const Home = (props) => {
   }, [vantaEffect]);
 
   return (
-      <div style={{ height: "100vh", width: "100vw" }} ref={myRef}>
+    <div style={{ height: "100vh", width: "100vw" }} ref={myRef}>
       <div className="home">
         <div className="logo-main">
           <div className="side-social">
@@ -67,16 +65,14 @@ const Home = (props) => {
             <p>MAGNATE'21</p>
             <p>EVOLUTION OF ENTREPRENEURSHIP</p>
             <div className="register-btn">
-              <Link to='/events' className='register-link'>
+              <Link to="/events" className="register-link">
                 REGISTER
               </Link>
-              
             </div>
           </div>
         </div>
       </div>
     </div>
-    
   );
 };
 
