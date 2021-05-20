@@ -1,15 +1,12 @@
 import React from 'react';
 import './aboutus.css';
 import img1 from '../../assets/img1.gif';
-import PerfectScrollbar from 'react-perfect-scrollbar';
 import {Redirect} from 'react-router-dom'
 const AboutUs = () =>{
-    const handleScroll = () => {
-        <Redirect to="/events" />
-      }
+    
 
     return(
-        <PerfectScrollbar onScrollY={handleScroll}> 
+       
 
     <div className="aboutus">
         <div className="magnate-theme">
@@ -48,7 +45,7 @@ const AboutUs = () =>{
             </div>
         </div>
     </div>
-    </PerfectScrollbar>
+  
 
 
 );

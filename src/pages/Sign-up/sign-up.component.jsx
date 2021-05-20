@@ -4,7 +4,7 @@ import CustomButton from "../../components/custom-button/custom-button.component
 import "react-responsive-modal/styles.css";
 
 import { auth, createUserProfile } from "../../firebase/firebase.utils";
-import "./sign-up.styles.scss";
+import "./sign-up.styles.css";
 import { Link } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/firestore";
