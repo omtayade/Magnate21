@@ -154,7 +154,7 @@ class SignUp extends React.Component {
               type="tel"
               pattern="[1-9]{1}[0-9]{9}"
               name="phone"
-              label="Enter your mobile mumber"
+              label="Mobile mumber"
               value={phone}
               handleChange={this.handleChange}
               required

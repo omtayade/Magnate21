@@ -4,7 +4,6 @@ import "./Card.css";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 // import close from "../../assets/closeIcon.svg";
-
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { auth, firestore } from "../../firebase/firebase.utils";
@@ -15,6 +14,7 @@ import "firebase/auth";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { toast } from "react-toastify";
+import { NavLink } from "react-router-dom";
 function Card({ title, children, CurrentUser }) {
   const [open, setOpen] = useState(false);
   const [detail, setDetail] = useState("description");
@@ -168,13 +168,13 @@ function Card({ title, children, CurrentUser }) {
             <div className="event-heading">STARTUP EXPO</div>
             <div className="draft">
               <div className="options">
-                <div onClick={() => changeDetail("description")}>
+                <div onClick={() => changeDetail("description")} style={{color:`${detail=="description"?"black":"white"}`}}>
                   DESCRIPTION
                 </div>
-                <div onClick={() => changeDetail("format")}>FORMAT</div>
-                <div onClick={() => changeDetail("evaluation")}>EVALUATION</div>
-                <div onClick={() => changeDetail("rules")}>RULES</div>
-                <div onClick={() => changeDetail("sponsors")}>SPONSORS</div>
+                <div onClick={() => changeDetail("format")} style={{color:`${detail=="format"?"black":"white"}`}}>FORMAT</div>
+                <div onClick={() => changeDetail("evaluation")} style={{color:`${detail=="evaluation"?"black":"white"}`}}>EVALUATION</div>
+                <div onClick={() => changeDetail("rules")} style={{color:`${detail=="rules"?"black":"white"}`}}>RULES</div>
+                <div onClick={() => changeDetail("sponsors")} style={{color:`${detail=="sponsors"?"black":"white"}`}}>SPONSORS</div>
               </div>
               <div className="option-content">
                 {detail == "description" ? draftDetails[0] : null}
