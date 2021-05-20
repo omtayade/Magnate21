@@ -1,11 +1,17 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './aboutus.css';
 import img1 from '../../assets/img1.gif';
-import {Redirect} from 'react-router-dom'
 import Footer from '../../components/Footer/footer';
+import  'aos/dist/aos.css';
+import AOS from 'aos';
+
 const AboutUs = () =>{
     
-
+    useEffect(() => {
+        AOS.init({
+          duration : 2000
+        });
+      }, []);
     return(
        
 
@@ -15,7 +21,7 @@ const AboutUs = () =>{
             <p>EVOLUTION of ENTREPRENEURSHIP</p>
         </div>
         <div className="about-magnate">
-            <h1>ABOUT MAGNATE'21</h1>
+            <h1 data-aos={"fade-up"}>ABOUT MAGNATE'21</h1>
             <div className="about-magnate-container">
                 <div className="about-magnate-content">
                     The event is especially well recognized for the variety of panel discussions, competitive events,
