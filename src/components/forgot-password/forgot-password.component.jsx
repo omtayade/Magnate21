@@ -54,7 +54,7 @@ class ForgotPassword extends React.Component {
 
   render() {
     return (
-      <div className="box">
+      <div className="box__forgot__password">
         <div className="forgot__password">
           <h2>Enter your email id</h2>
           <FormInput
