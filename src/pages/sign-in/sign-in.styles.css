@@ -25,7 +25,6 @@
 }
 .switchPage {
     width: 90%;
-    min-width: 60vw;
     max-width: 380px;
     display: flex;
     margin: auto;

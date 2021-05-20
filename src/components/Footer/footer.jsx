@@ -26,17 +26,17 @@ class Footer extends Component {
                 <div className="footer-content">
                     <div className="quicklinks">
                         <h2 style={{ color: "grey" }}>Quick-Links</h2>
-                        <a href="/events" ><h5 >events</h5></a>
-                        <a href="/sponsers" ><h5 >sponsers</h5></a>
+                        <a href="/events" ><h4 >Events</h4></a>
+                        <a href="/sponsers" ><h4 >Sponsers</h4></a>
                     </div>
                     
                     <div className="contact">
                         <h2 style={{ color: "grey"  }}>Contact Us</h2>
                         <i className="fa fa-envelope fa-lg" /><br />
-                        <h5 >{"  "}edc.pict@gmail.com</h5>
+                        <h4>{"  "}edc.pict@gmail.com</h4>
                         <i className="fa fa-phone fa-lg" /><br />
-                            <h5>rahul shinde - 9876543210</h5>
-                            <h5>rahul shinde - 9876543210</h5>
+                            <h4>Rahul Shinde - 9876543210</h4>
+                            <h4>Rahul Shinde - 9876543210</h4>
                         <div className="social-icons" >
                             <a href="www.facebook.com">
                                 <i className="fa fa-facebook fa-md "></i>
@@ -56,10 +56,10 @@ class Footer extends Component {
                     <div className="address">
                         <h2 style={{ color: "grey" }}>Address</h2>
                         <i className="fa fa-map-marker fa-md" />
-                        <h5>Pune Institute of Computer Technology,</h5>
-                        <h5>Behind Bharati Vidyapeeth University,</h5>
-                        <h5 >Dhankawadi, Pune,</h5>
-                        <h5 >Maharashtra-411043</h5>
+                        <h4>Pune Institute of Computer Technology,</h4>
+                        <h4>Behind Bharati Vidyapeeth University,</h4>
+                        <h4 >Dhankawadi, Pune,</h4>
+                        <h4 >Maharashtra-411043</h4>
                     </div>
 
                 </div>

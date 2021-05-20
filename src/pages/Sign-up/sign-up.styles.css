@@ -1,11 +1,12 @@
 .box {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(34,34,34);
     height: 100%;
     min-height: 100vh;
+    background-color: rgb(34,34,34);
 }
 .signup {
     display: flex;
@@ -15,12 +16,11 @@
     margin-top: 60px;
 
 }
-.title {
-    margin: 10px 0 10px 0;
+.title{
+    margin-top: 70px;
 }
 .switchPage {
     width: 90%;
-    min-width: 60vw;
     max-width: 380px;
     display: flex;
 }
