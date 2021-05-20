@@ -1,5 +1,5 @@
 .box1 {
-    max-width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 7vw;
 }
 .sign-in .title {
     margin: 10px 0;
@@ -22,12 +21,12 @@
 .sign-in .buttons {
     display: flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: start;
 }
 .switchPage {
     width: 90%;
+    min-width: 60vw;
     max-width: 380px;
     display: flex;
     margin: auto;
-    margin-top: 1vw;
 }

@@ -182,12 +182,12 @@ class SignUp extends React.Component {
               SIGN UP
             </CustomButton>
           </form>
-        </div>
-        <div className="switchPage">
-          <h3>Already have an account?</h3>
-          <Link to="/signin">
-            <h4>Login</h4>
-          </Link>
+          <div className="switchPage">
+            <h3>Already have an account?</h3>
+            <Link to="/signin">
+              <h4>Login</h4>
+            </Link>
+          </div>
         </div>
       </div>
     );
