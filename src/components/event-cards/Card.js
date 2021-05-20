@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Card.css";
-
+// import emailjs from 'emailjs-com';
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 // import close from "../../assets/closeIcon.svg";
@@ -49,6 +49,16 @@ function Card({ title, children, CurrentUser }) {
 
   fetchEvents();
   
+  // function sendEmail(title) {
+    
+
+  //   emailjs.sendForm('service_mwlfloi', 'template_kk7dkpd', ".card", 'user_tFK8rtrT8kBLvFV9RBwGB')
+  //     .then((result) => {
+  //         console.log(result.text);
+  //     }, (error) => {
+  //         console.log(error.text);
+  //     });
+  // }
   
   
 
@@ -67,7 +77,7 @@ function Card({ title, children, CurrentUser }) {
         draggable: true,
         progress: undefined,
       });
-      
+      // sendEmail(title);
     } catch (error) {
       console.log(error.message);
     }

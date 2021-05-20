@@ -35,7 +35,6 @@
 .quick-links{
     margin-left: 18%;
     margin-top: 2%;
-    text-align: center;
 }
 .quick-links a{
     color:#ffffff;
@@ -100,9 +99,5 @@
     }
     .social-icons i {
         margin:1em;
-    }
-    .footer-content{
-        flex-flow: column;
-        align-items: center;
     }
 }

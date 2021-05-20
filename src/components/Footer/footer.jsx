@@ -23,7 +23,20 @@ class Footer extends Component {
                     <Button outline onClick={this.handleScrollToStats} style={{ color: "#f09103" }}>Back To Top</Button>
                 </div>
 
-                
+                <div className="social-icons" >
+                    <a href="www.facebook.com">
+                        <i className="fab fa-facebook" style={{ fontSize: "2em" }}></i>
+                    </a>
+                    <a href="www.instagram.com">
+                        <i className="fab fa-instagram" style={{ fontSize: "2em" }}></i>
+                    </a>
+                    <a href="www.linkedin.com">
+                        <i className="fab fa-linkedin-in" style={{ fontSize: "2em" }}></i>
+                    </a>
+                    <a href="www.youtube.com">
+                        <i className="fab fa-youtube" style={{ fontSize: "2em" }}></i>
+                    </a>
+                </div>
 
                 <div className="footer-content">
                     <div className="quick-links">
@@ -52,21 +65,6 @@ class Footer extends Component {
                     <div className="message">
                         <p style={{ color: "#f09103" }}>IDEATE - INNOVATE - INCUBATE</p>
                     </div>
-                </div>
-
-                <div className="social-icons" >
-                    <a href="www.facebook.com">
-                        <i className="fab fa-facebook" style={{ fontSize: "2em" }}></i>
-                    </a>
-                    <a href="www.instagram.com">
-                        <i className="fab fa-instagram" style={{ fontSize: "2em" }}></i>
-                    </a>
-                    <a href="www.linkedin.com">
-                        <i className="fab fa-linkedin-in" style={{ fontSize: "2em" }}></i>
-                    </a>
-                    <a href="www.youtube.com">
-                        <i className="fab fa-youtube" style={{ fontSize: "2em" }}></i>
-                    </a>
                 </div>
 
             </div>

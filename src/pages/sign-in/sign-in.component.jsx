@@ -2,7 +2,7 @@ import React from "react";
 import FormInput from "../../components/form-input/form-item.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
-import "./sign-in.styles.scss";
+import "./sign-in.styles.css";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
