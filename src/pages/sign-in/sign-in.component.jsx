@@ -45,10 +45,10 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div className="box">
+      <div className="box1">
         <div className="sign-in">
-          <h2 style={{ color: "black" }}>I already have an account</h2>
-          <span style={{ color: "black" }}>
+          <h2 style={{ color: "orangered" }}>I already have an account</h2>
+          <span style={{ color: "grey" }}>
             Sign in with your email and password
           </span>
 
@@ -79,7 +79,7 @@ class SignIn extends React.Component {
           </form>
         </div>
         <div className="switchPage">
-          <h3 style={{ color: "black" }}>Don't have an account?</h3>
+          <h3 style={{ color: "grey" }}>Don't have an account?</h3>
           <Link to="/signup">
             <h4 style={{ color: "red" }}> Register</h4>
           </Link>

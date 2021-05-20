@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from "react";
 import "./home.css";
-import bg from "./bg.mp4";
 import DOTS from "./vanta.dots.min.js";
 
 import linkedin from "../../assets/linkedin.svg";

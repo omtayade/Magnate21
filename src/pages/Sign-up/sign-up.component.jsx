@@ -127,10 +127,10 @@ class SignUp extends React.Component {
     return (
       <div className="box">
         <div className="signup">
-          <h2 className="title" style={{ color: "black" }}>
+          <h2 className="title" style={{ color: "orangered" }}>
             Don't have an account ?
           </h2>
-          <span style={{ color: "black" }}>
+          <span style={{ color: "grey" }}>
             Sign up with your email and password
           </span>
           <form className="sign-up-form" onSubmit={this.handleSubmit}>

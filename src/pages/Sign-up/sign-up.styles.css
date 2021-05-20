@@ -4,16 +4,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
+    background-color: rgb(34,34,34);
+    height: 105vh;
 }
 .signup {
     display: flex;
     flex-direction: column;
     width: 90%;
     max-width: 380px;
+    margin-top: 60px;
+
 }
 .title {
-    margin: 10px 0;
+    margin: 50px 0 10px 0;
 }
 .switchPage {
     width: 90%;
@@ -21,14 +24,14 @@
     display: flex;
 }
 .switchPage h3 {
-    color: black;
+    color: grey;
 }
 .switchPage h4 {
     color: red;
     margin-left: 10px;
 }
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
     .box {
         margin: 55px;
    }
-}
+} */
