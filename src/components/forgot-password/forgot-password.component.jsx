@@ -4,7 +4,7 @@ import CustomButton from "../custom-button/custom-button.component";
 import firebase from "firebase/app";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
+import "./forgot-password.component.css";
 
 class ForgotPassword extends React.Component {
   constructor() {
@@ -54,7 +54,7 @@ class ForgotPassword extends React.Component {
 
   render() {
     return (
-      <div className="box">
+      <div className="box__forgot__password">
         <div className="forgot__password">
           <h2>Enter your email id</h2>
           <FormInput

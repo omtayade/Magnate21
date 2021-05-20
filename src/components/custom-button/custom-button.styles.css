@@ -41,7 +41,7 @@
 }
 @media only screen and (max-width: 768px) {
   .custom-button {
-    font-size: 10px;
+    font-size: 12px;
     padding: 0 15px 0 15px;
   }
 }
