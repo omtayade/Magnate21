@@ -44,7 +44,6 @@ const handleClick = async () => {
 
 const RightHeader = ({ open, currentUser }) => (
   <Ul open={open}>
-    
     <li>
       <NavLink
         to="/"
@@ -66,7 +65,7 @@ const RightHeader = ({ open, currentUser }) => (
       </NavLink>
     </li>
 
-      <li>
+    <li>
         <NavLink  to='/events' className='option' activeClassName="active__option">
           Events
         </NavLink>
@@ -91,11 +90,7 @@ const RightHeader = ({ open, currentUser }) => (
             Login/Register
           </NavLink>
         )}
-
       </li>
-      
-      
-     
   </Ul>
 );
 

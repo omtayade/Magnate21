@@ -64,10 +64,11 @@
 }
 
 .customOverlay {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.9);
 }
 .customModal {
   background: rgb(255, 102, 0);
+  top: 55px;
   width: 100vw;
   height: 100vh;
   position: fixed !important;
@@ -78,8 +79,7 @@
   left: 0;
 }
 
-
-.react-responsive-modal-closeButton{
+.react-responsive-modal-closeButton {
   border-radius: 100%;
   background: orangered !important;
 }
@@ -92,6 +92,7 @@
 
 .event-details {
   display: flex;
+  height: 100%;
   flex-flow: column;
   justify-content: center;
   background: rgb(20, 20, 20);
@@ -123,7 +124,7 @@
 }
 
 .option-content {
-  height: 50vh;
+  height: 100%;
   background: rgb(20, 20, 20);
   color: white;
   padding: 2em;
@@ -144,12 +145,13 @@
 .option-content::-webkit-scrollbar-thumb {
   background-color: orangered; /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
-  
+
   /* border: 3px solid orangered;  creates padding around scroll thumb */
 }
 
-.closeModal{
+.closeModal {
   position: absolute;
+  outline: none;
   right: 10px;
   top: 10px;
   height: 15px;
@@ -157,33 +159,33 @@
 }
 
 @media (min-width: 1000px) {
-.magnate-name p:nth-child(1) {
-  font-size: 7em;
-}
+  .magnate-name p:nth-child(1) {
+    font-size: 7em;
+  }
 }
 
 @media (min-width: 600px) and (max-width: 999px) {
-.magnate-name p:nth-child(1) {
-  font-size: 5em;
-}
+  .magnate-name p:nth-child(1) {
+    font-size: 5em;
+  }
 }
 
 @media (min-width: 450px) and (max-width: 599px) {
-.magnate-name p:nth-child(1) {
-  font-size: 4em;
-}
+  .magnate-name p:nth-child(1) {
+    font-size: 4em;
+  }
 }
 
 @media (min-width: 250px) and (max-width: 449px) {
-  .options div{
-      font-size: 1em;
+  .options div {
+    font-size: 1em;
   }
-  .options{
-      margin: 0 5px;
-      border-radius: 2px;
-      justify-content: space-between;
+  .options {
+    margin: 0 5px;
+    border-radius: 2px;
+    justify-content: space-between;
   }
-  }
+}
 .magnate-name p:nth-child(1) {
   font-size: 3em;
 }
@@ -194,7 +196,7 @@
     float: inline-start;
   }
 }
-.react-responsive-modal-closeButton{
+.react-responsive-modal-closeButton {
   border-radius: 100%;
   background: orangered !important;
 }
