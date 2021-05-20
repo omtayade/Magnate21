@@ -9,14 +9,7 @@
 .button-top{
     display: flex;
     justify-content: center;
-}
-
-.quicklinks a{
-    color: white;
-    text-decoration: none;
-}
-.quicklinks a:hover{
-    color: #f09103;
+    padding: 1em;
 }
 
 .social-icons{
@@ -25,79 +18,73 @@
     padding: 1em;
 }
 .social-icons i {
-    margin:2em;
+    margin-right:1em;
     color: white;
+    font-size: 1.5em;
 }
+
 .footer-content{
     display: flex;
     padding-bottom :1em;
 }
-.quick-links{
-    margin-left: 18%;
-    margin-top: 2%;
+.quicklinks{
+    margin-left: 13%;
+    padding: 1em;
+    text-align:center;
 }
-.quick-links a{
+.quicklinks a{
     color:#ffffff;
-    padding: 0.5em;
-    margin-left: 0.5em;
-    display: flex;
 }
-.quick-links a:hover{
+.quicklinks a:hover{
     text-decoration: none;
     color:#f09103;
 }
-.logos{
-    margin-left: 20%;
+.address{
+    margin-left: 13%;
+    padding: 1em;
+    text-align:center;
 }
-.logos img{
-    border-radius: 1em;
+.address i{
+    color: #f09103;
+    font-size: 2em;
 }
 .contact{
-    margin-left: 19%;
-    margin-top: 2%;
+    margin-left: 15%;
+    padding: 1em;
+    text-align:center;
+
 }
 .contact i{
-    color: white;
-}
-.contact a{
     color: #f09103;
-    font-size: x-large;
 }
 .contact a:hover{
     text-decoration: none;
     color:white;
+    font-size: medium;
 }
 .end{
     text-align: center;
 }
-@media (min-width:701) and (max-width: 1050px){
-    .quick-links{
-        margin-left: 2%;
-    }
-    .logos{
-        margin-left: 2%;
-    }
-    .contact{
-        margin-left: 2%;
-    }
-    .contact a{
-        font-size: medium;
-    }
+.copyright{
+    color: white;
 }
+h5{
+    color:rgb(224, 243, 248);
+}
+
 @media screen and (max-width: 700px) {
-    .quick-links{
-        margin-left: 1%;
+    .footer-content{
+        display: block;
+        margin-left: auto;
+        margin-right: auto
     }
-    .logos{
-        margin-left: 0.5%;
+    .quicklinks{
+        margin-left: 1%;
     }
     .contact{
         margin-left: 1%;
     }
-    .contact a{
-        font-size: small;
-    }
-    .social-icons i {
-        margin:1em;
+    .address{
+        margin-left: 1%;
     }
 }
