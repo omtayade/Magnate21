@@ -26,14 +26,14 @@ const AboutUs = () =>{
                     aspirations and experiences and get the right direction for their endeavors.
                 </div>
                 <div className="about-magnate-svg">
-                    <img src={img1} style={{width:'100%',height:"100%",borderRadius:"10px"}}></img>
+                    <img src={img1} style={{width:'90%',height:"90%",borderRadius:"10px"}}></img>
                 </div>
             </div>
             <div className="about-edc">
                 <h1>ABOUT EDC</h1>
                 <div className="about-edc-container">
                     <div className="about-edc-svg">
-                        <img src={img1} style={{width:'100%',height:"100%",borderRadius:"10px"}}></img>
+                        <img src={img1} style={{width:'90%',height:"90%",borderRadius:"10px"}}></img>
                     </div>
                     <div className="about-edc-content">
                         Entrepreneurship Development Cell, PICT firmly believes that India needs the drive and innovation of the young entrepreneurs.

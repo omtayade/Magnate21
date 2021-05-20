@@ -202,7 +202,7 @@
 .social-inner i {
   margin-right: 17px;
   color: white;
-  margin-left: 5px;
+  margin-left: 8px;
 }
 
 .social-inner i:hover{
@@ -246,4 +246,8 @@
   .side-social{
     display: none;
   }
+}
+
+.social-inner{
+  padding: 8px;
 }
