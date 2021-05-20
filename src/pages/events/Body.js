@@ -4,10 +4,20 @@ import './Body.css'
 
 function Body() {
 
-    const data="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit sint alias maiores recusandae atque, aliquid vel consectetur iusto reiciendis debitis. Facere nostrum eaque quos aperiam, exercitationem reprehenderit repellendus est provident!";
+    const data=" Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit sint alias maiores recusandae atque, aliquid vel consectetur iusto reiciendis debitis. Facere nostrum eaque quos aperiam, exercitationem reprehenderit repellendus est provident!";
 
     return (
         <>
+            <div class="animation-area">
+                <ul class="box-area">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
             <div className="app__body">
                 <div className="app__body__heading">
                     <a> Events </a>                  
