@@ -77,12 +77,12 @@ class SignIn extends React.Component {
               </Link>
             </div>
           </form>
-        </div>
         <div className="switchPage">
           <h3 style={{ color: "grey" }}>Don't have an account?</h3>
           <Link to="/signup">
             <h4 style={{ color: "red" }}> Register</h4>
           </Link>
+        </div>
         </div>
       </div>
     );

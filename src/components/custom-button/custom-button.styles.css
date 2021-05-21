@@ -1,5 +1,6 @@
 .custom-button {
   width: fit-content;
+  min-width: 125px;
   height: 50px;
   margin: 5px;
   letter-spacing: 0.5px;
@@ -9,12 +10,11 @@
   background-color: orangered;
   color: white;
   text-transform: uppercase;
+  text-align: center;
   font-family: "Open Sans Condensed";
   font-weight: bolder;
   border: none;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
   border-radius: 100px;
   
 }

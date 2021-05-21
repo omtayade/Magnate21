@@ -23,6 +23,8 @@
 .about-magnate{
     display: flex;
     flex-flow: column;
+    padding:30px;
+    padding-bottom: 70px;
 }
 
 .about-magnate-container{

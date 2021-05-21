@@ -25,8 +25,8 @@ export default function Developers() {
           mail={"https://maxcharge788769@gmail.com"}
         />
         <DevCard
-          picture={MayurDP}
-          name={"Mayur Jain"}
+          picture={null}
+          name={"Amit Purohit"}
           linkedIn={"https://www.linkedin.com/in/mayur-jain-904982191"}
           github={"https://github.com/maxcharge"}
           mail={"https://maxcharge788769@gmail.com"}
@@ -42,8 +42,8 @@ export default function Developers() {
         />
 
         <DevCard
-          picture={MayurDP}
-          name={"Mayur Jain"}
+          picture={null}
+          name={"Amit Shinde"}
           linkedIn={"https://www.linkedin.com/in/mayur-jain-904982191"}
           github={"https://github.com/maxcharge"}
           mail={"https://maxcharge788769@gmail.com"}

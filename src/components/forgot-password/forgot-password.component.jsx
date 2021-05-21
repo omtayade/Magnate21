@@ -65,7 +65,7 @@ class ForgotPassword extends React.Component {
             handleChange={this.handleChange}
             required
           />
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" , justifyContent:"start" }}>
             <Link to="/signin">
               <CustomButton>
                 {""}Back to Login{""}

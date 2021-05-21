@@ -127,8 +127,8 @@ class SignUp extends React.Component {
     return (
       <div className="box">
         <div className="signup">
-          <h2 className="title" style={{ color: "orangered" }}>
-            Don't have an account ?
+        <h2 style={{ color: "orangered" }}>
+          Don't have an account?
           </h2>
           <span style={{ color: "grey" }}>
             Sign up with your email and password
@@ -182,12 +182,12 @@ class SignUp extends React.Component {
               SIGN UP
             </CustomButton>
           </form>
-        </div>
-        <div className="switchPage">
-          <h3>Already have an account?</h3>
-          <Link to="/signin">
-            <h4>Login</h4>
-          </Link>
+          <div className="switchPage">
+            <h3>Already have an account?</h3>
+            <Link to="/signin">
+              <h4>Login</h4>
+            </Link>
+          </div>
         </div>
       </div>
     );
