@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./home.css";
-import DOTS from "./vanta.dots.min.js";
+import {DOTS} from "./vanta.dots.min.js";
 
 import linkedin from "../../assets/linkedin.svg";
 import { Link } from "react-router-dom";
