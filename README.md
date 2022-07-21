@@ -1,7 +1,8 @@
 # Magnate21
-This is full stack web app built using React. I've used Redux for state management, firebase APIs for authentication and Cloud Firestore as a database.
-It is an Online Store that provides a platform to exchange Used Books or engineering materials with other students, mainly with the students of PICT. The idea is similar to the application like OLX. 
-
+This is a fully responsive and secure web application developed using React.js and firebase to help
+candidates register for various events and to provide the insights of Entrepreneurship
+development cell and Magnate'21
+The technology used: React, Redux, Firebase
 
 ### To run the app go to the project directory, open command prompt or terminal and run the following command:
     npm start
