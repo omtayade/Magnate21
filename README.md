@@ -13,8 +13,8 @@ It is an Online Store that provides a platform to exchange Used Books or enginee
 ### Events Registration 
 <img width="1420" alt="eventsmag" src="https://user-images.githubusercontent.com/60639272/180151237-e9241e9f-9bd7-4afa-9a2c-dd69e94df964.png">
 
-### Products Catalogue
-![booksbuy](https://user-images.githubusercontent.com/60639272/180053986-60671977-71be-47dd-8fa9-7d459374c311.jpeg)
+### About Maganate21
+<img width="1424" alt="aboutmag" src="https://user-images.githubusercontent.com/60639272/180151511-30e92430-283f-44b7-ba05-06af05254518.png">
 
 ### Sell Items
 ![sell](https://user-images.githubusercontent.com/60639272/180054370-722c45a0-7d8a-4069-8867-7f3ae1b91f11.jpeg)
