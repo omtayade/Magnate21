@@ -1,8 +1,7 @@
 # Magnate21
 This is a fully responsive and secure web application developed using React.js and firebase to help
-candidates register for various events and to provide the insights of Entrepreneurship
-development cell and Magnate'21
-The technology used: React, Redux, Firebase
+candidates register for various competitions in the event and to provide the insights of Entrepreneurship
+development cell and Magnate'21. The technology used: React, Redux, Firebase
 
 ### To run the app go to the project directory, open command prompt or terminal and run the following command:
     npm start
