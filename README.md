@@ -19,6 +19,4 @@ It is an Online Store that provides a platform to exchange Used Books or enginee
 ### Login / Register
 <img width="1429" alt="signinmag" src="https://user-images.githubusercontent.com/60639272/180151775-d94b2587-308f-426b-83ca-81ad64f9f7a1.png">
 
-### Mobile View
-![mobileview](https://user-images.githubusercontent.com/60639272/180054677-00779c74-a88a-47da-a856-44852b903201.jpeg)
 
