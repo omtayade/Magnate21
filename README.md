@@ -10,8 +10,8 @@ It is an Online Store that provides a platform to exchange Used Books or enginee
 ### Landing Page
 <img width="1431" alt="homemag" src="https://user-images.githubusercontent.com/60639272/180151074-4d5a0c15-339b-4a86-93c5-f5b39b0a474a.png">
 
-### Buy Items
-![buygeneral](https://user-images.githubusercontent.com/60639272/180053186-65cf1126-f58c-4b04-8585-bfa9fecd93be.jpeg)
+### Events Registration 
+<img width="1420" alt="eventsmag" src="https://user-images.githubusercontent.com/60639272/180151237-e9241e9f-9bd7-4afa-9a2c-dd69e94df964.png">
 
 ### Products Catalogue
 ![booksbuy](https://user-images.githubusercontent.com/60639272/180053986-60671977-71be-47dd-8fa9-7d459374c311.jpeg)
