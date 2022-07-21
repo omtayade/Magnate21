@@ -16,8 +16,8 @@ It is an Online Store that provides a platform to exchange Used Books or enginee
 ### About Maganate21
 <img width="1424" alt="aboutmag" src="https://user-images.githubusercontent.com/60639272/180151511-30e92430-283f-44b7-ba05-06af05254518.png">
 
-### Sell Items
-![sell](https://user-images.githubusercontent.com/60639272/180054370-722c45a0-7d8a-4069-8867-7f3ae1b91f11.jpeg)
+### Login / Register
+<img width="1429" alt="signinmag" src="https://user-images.githubusercontent.com/60639272/180151775-d94b2587-308f-426b-83ca-81ad64f9f7a1.png">
 
 ### Mobile View
 ![mobileview](https://user-images.githubusercontent.com/60639272/180054677-00779c74-a88a-47da-a856-44852b903201.jpeg)
